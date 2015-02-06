@@ -1,4 +1,10 @@
 # OfficeAppTwitterPoll
 Microsoft Office App twitter polling
 
-Signing in
+Members: Kunal Kapoor
+	Pavel Tarasov
+	Erik Eviston
+	Paddy Healy
+	Paddy Nally
+
+
