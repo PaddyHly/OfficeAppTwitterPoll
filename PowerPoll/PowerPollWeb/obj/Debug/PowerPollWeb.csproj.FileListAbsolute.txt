@@ -1,0 +1,6 @@
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\PowerPollWeb.dll.config
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\PowerPollWeb.dll
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\PowerPollWeb.pdb
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\obj\Debug\PowerPollWeb.csprojResolveAssemblyReference.cache
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\obj\Debug\PowerPollWeb.dll
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\obj\Debug\PowerPollWeb.pdb

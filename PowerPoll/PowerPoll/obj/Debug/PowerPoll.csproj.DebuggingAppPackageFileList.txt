@@ -1,0 +1,2 @@
+bin\Debug\OfficeAppManifests\PowerPollManifest.xml
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\PowerPoll.debugapp
