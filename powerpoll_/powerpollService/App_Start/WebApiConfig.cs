@@ -5,6 +5,7 @@ using System.Web.Http;
 using Microsoft.WindowsAzure.Mobile.Service;
 using powerpollService.DataObjects;
 using powerpollService.Models;
+using Tweetinvi;
 
 namespace powerpollService
 {
@@ -14,6 +15,12 @@ namespace powerpollService
         {
             // Use this class to set configuration options for your mobile service
             ConfigOptions options = new ConfigOptions();
+
+            TwitterCredentials.ApplicationCredentials = TwitterCredentials.CreateCredentials(
+                "3004124297-zzToru8oHmIGxJAOyWojqeRP2fxgzx25irOO4de",
+                "Sa8CerPNMZfOh3hiWQ30gu9pxADnfnOAAAUGN4dlENKhd",
+                "dQPcIhiNdtHAchfx7ZbsjeDAW",
+                "V53RXnrRhpq6ReHa6qtRKi5J5IhLz5HzYCyXAJP031krCzreur");
 
             // Use this class to set WebAPI configuration options
             HttpConfiguration config = ServiceConfig.Initialize(new ConfigBuilder(options));

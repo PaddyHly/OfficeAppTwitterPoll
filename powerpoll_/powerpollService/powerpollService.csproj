@@ -90,7 +90,10 @@
     <Reference Include="PCLWebUtility">
       <HintPath>..\..\PowerPoll\packages\PCLWebUtility.1.0.2\Lib\portable-net4+sl4+wp7+win8\PCLWebUtility.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Http">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
@@ -190,6 +193,7 @@
     <Reference Include="System.Spatial">
       <HintPath>..\packages\System.Spatial.5.6.2\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
     <Reference Include="Tweetinvi">
       <HintPath>..\..\PowerPoll\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.dll</HintPath>
     </Reference>
@@ -223,8 +227,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\PollResultController.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
     <Compile Include="Controllers\TwitterController.cs" />
+    <Compile Include="DataObjects\PollResult.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Models\powerpollContext.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />

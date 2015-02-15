@@ -20,16 +20,6 @@ namespace powerpollService.Controllers
         public string Get(string hashtag, string keywords)
         {
             //this stuff is here until we find somewhere better
-            TwitterCredentials.SetCredentials(
-                "Access_Token",
-                "Access_Token_Secret",
-                "Consumer_Key",
-                "Consumer_Secret");
-            TwitterCredentials.SetCredentials(
-                "3004124297-zzToru8oHmIGxJAOyWojqeRP2fxgzx25irOO4de",
-                "Sa8CerPNMZfOh3hiWQ30gu9pxADnfnOAAAUGN4dlENKhd",
-                "dQPcIhiNdtHAchfx7ZbsjeDAW",
-                "V53RXnrRhpq6ReHa6qtRKi5J5IhLz5HzYCyXAJP031krCzreur");
 
             string[] keywordArr = keywords.Split(',');
             Result[] results = new Result[keywordArr.Length];
@@ -60,7 +50,6 @@ namespace powerpollService.Controllers
                     }
                 }
             }
-
             return JsonConvert.SerializeObject(results);
         }
 

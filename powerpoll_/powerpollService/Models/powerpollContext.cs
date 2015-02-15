@@ -39,6 +39,8 @@ namespace powerpollService.Models
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
         }
+
+        public System.Data.Entity.DbSet<powerpollService.DataObjects.PollResult> PollResults { get; set; }
     }
 
 }
