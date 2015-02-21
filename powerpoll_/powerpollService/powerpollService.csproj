@@ -59,6 +59,14 @@
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PowerPoll\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PowerPoll\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
@@ -77,12 +85,6 @@
     <Reference Include="Microsoft.WindowsAzure.Mobile.Service.Tables">
       <HintPath>..\packages\WindowsAzure.MobileServices.Backend.Tables.1.0.447\lib\net45\Microsoft.WindowsAzure.Mobile.Service.Tables.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\PowerPoll\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -90,6 +92,7 @@
     <Reference Include="PCLWebUtility">
       <HintPath>..\..\PowerPoll\packages\PCLWebUtility.1.0.2\Lib\portable-net4+sl4+wp7+win8\PCLWebUtility.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
@@ -227,11 +230,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\PollResultController.cs" />
-    <Compile Include="Controllers\TodoItemController.cs" />
+    <Compile Include="Controllers\PollController.cs" />
+    <Compile Include="Controllers\PollResultsController.cs" />
     <Compile Include="Controllers\TwitterController.cs" />
+    <Compile Include="DataObjects\Poll.cs" />
     <Compile Include="DataObjects\PollResult.cs" />
-    <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Models\powerpollContext.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
     <Compile Include="Global.asax.cs">

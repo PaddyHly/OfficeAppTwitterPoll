@@ -25,8 +25,6 @@ namespace powerpollService.Models
         {
         } 
 
-        public DbSet<TodoItem> TodoItems { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             string schema = ServiceSettingsDictionary.GetSchemaName();
@@ -40,7 +38,10 @@ namespace powerpollService.Models
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
         }
 
-        public System.Data.Entity.DbSet<powerpollService.DataObjects.PollResult> PollResults { get; set; }
+        public System.Data.Entity.DbSet<powerpollService.DataObjects.Poll> Polls { get; set; }
+
+        public System.Data.Entity.DbSet<powerpollService.DataObjects.PollResults> PollResults { get; set; }
+
     }
 
 }
