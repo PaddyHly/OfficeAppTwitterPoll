@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Web.Http;
+using System.Data.Entity;
+using System.Threading;
+using System.Collections.Generic;
 using Microsoft.WindowsAzure.Mobile.Service;
 using powerpollService.DataObjects;
 using powerpollService.Models;
@@ -29,6 +30,11 @@ namespace powerpollService
             // config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             
             Database.SetInitializer(new powerpollInitializer());
+            new Thread(() =>
+            {
+                Thread.CurrentThread.IsBackground = true;
+                MonitorTwitter.monitor();
+            }).Start();
         }
     }
 

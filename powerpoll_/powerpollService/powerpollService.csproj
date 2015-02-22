@@ -229,6 +229,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\MonitorTwitter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\PollController.cs" />
     <Compile Include="Controllers\ResultController.cs" />

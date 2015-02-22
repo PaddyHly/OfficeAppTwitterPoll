@@ -16,21 +16,14 @@ namespace powerpollService
     // A simple scheduled job which can be invoked manually by submitting an HTTP
     // POST request to the path "/jobs/monitortwitter".
 
-    public class MonitorTwitterJob : ScheduledJob
+    public class MonitorTwitter
     {
-        private powerpollContext context;
-
-        protected override void Initialize(ScheduledJobDescriptor scheduledJobDescriptor, CancellationToken cancellationToken)
+        public static void monitor()
         {
-            base.Initialize(scheduledJobDescriptor, cancellationToken);
-
-            context = new powerpollContext();
-        }
-
-        public async override Task ExecuteAsync()
-        {
+            powerpollContext context = new powerpollContext();
             var stream = Stream.CreateUserStream();
-            stream.TweetCreatedByAnyoneButMe += (s, t) => {
+            stream.TweetCreatedByAnyoneButMe += (s, t) =>
+            {
                 var hashtags = t.Tweet.Hashtags.ToArray()
                     .Select(x => x.Text.ToLowerInvariant());
                 foreach (Poll poll in context.Polls)//go through all the polls
