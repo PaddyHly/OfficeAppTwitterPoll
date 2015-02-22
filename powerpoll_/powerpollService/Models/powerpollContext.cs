@@ -45,7 +45,7 @@ namespace powerpollService.Models
 
         public System.Data.Entity.DbSet<powerpollService.DataObjects.Poll> Polls { get; set; }
 
-        public System.Data.Entity.DbSet<powerpollService.DataObjects.Result> PollResults { get; set; }
+        public System.Data.Entity.DbSet<powerpollService.DataObjects.Result> Results { get; set; }
 
     }
 

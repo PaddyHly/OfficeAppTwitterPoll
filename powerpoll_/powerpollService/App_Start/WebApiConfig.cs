@@ -45,6 +45,8 @@ namespace powerpollService
             Poll poll = new Poll { Id = "bestanimal", End_Time = DateTime.Now, Results = results };
             context.Set<Poll>().Add(poll);
 
+            context.
+
             base.Seed(context);
         }
     }
