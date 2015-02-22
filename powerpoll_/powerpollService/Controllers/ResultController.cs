@@ -9,7 +9,7 @@ using powerpollService.Models;
 
 namespace powerpollService.Controllers
 {
-    public class PollResultController : TableController<Result>
+    public class ResultController : TableController<Result>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
         {

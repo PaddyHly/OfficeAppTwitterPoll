@@ -21,7 +21,7 @@ namespace powerpollService.Controllers
         // GET tables/Poll
         public IQueryable<Poll> GetAllPoll()
         {
-            return Query(); 
+            return Query();
         }
 
         // GET tables/Poll/48D68C86-6EA6-4C25-AA33-223FC9A27959
