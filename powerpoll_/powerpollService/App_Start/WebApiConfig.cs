@@ -24,7 +24,6 @@ namespace powerpollService
 
             // Use this class to set WebAPI configuration options
             HttpConfiguration config = ServiceConfig.Initialize(new ConfigBuilder(options));
-
             // To display errors in the browser during development, uncomment the following
             // line. Comment it out again when you deploy your service for production use.
             // config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
@@ -37,16 +36,14 @@ namespace powerpollService
     {
         protected override void Seed(powerpollContext context)
         {
-            /*List<TodoItem> todoItems = new List<TodoItem>
+            List<Result> results = new List<Result>
             {
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
+                new Result { Id = "cat", Count = 2 },
+                new Result { Id = "dog", Count = 3 }
             };
 
-            foreach (TodoItem todoItem in todoItems)
-            {
-                context.Set<TodoItem>().Add(todoItem);
-            }*/
+            Poll poll = new Poll { Id = "bestanimal", End_Time = DateTime.Now, Results = results };
+            context.Set<Poll>().Add(poll);
 
             base.Seed(context);
         }

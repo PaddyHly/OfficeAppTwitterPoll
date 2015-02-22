@@ -33,6 +33,11 @@ namespace powerpollService.Models
                 modelBuilder.HasDefaultSchema(schema);
             }
 
+            //modelBuilder.Entity<Poll>().HasKey(s => s.PollId);
+
+            modelBuilder.Entity<Result>()
+                .HasKey(s => new { s.Id, s.PollId });
+
             modelBuilder.Conventions.Add(
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
@@ -40,7 +45,7 @@ namespace powerpollService.Models
 
         public System.Data.Entity.DbSet<powerpollService.DataObjects.Poll> Polls { get; set; }
 
-        public System.Data.Entity.DbSet<powerpollService.DataObjects.PollResults> PollResults { get; set; }
+        public System.Data.Entity.DbSet<powerpollService.DataObjects.Result> PollResults { get; set; }
 
     }
 

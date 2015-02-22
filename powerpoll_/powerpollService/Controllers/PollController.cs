@@ -9,37 +9,37 @@ using powerpollService.Models;
 
 namespace powerpollService.Controllers
 {
-    public class PollController : TableController<PollResults>
+    public class PollController : TableController<Poll>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
         {
             base.Initialize(controllerContext);
             powerpollContext context = new powerpollContext();
-            DomainManager = new EntityDomainManager<PollResults>(context, Request, Services);
+            DomainManager = new EntityDomainManager<Poll>(context, Request, Services);
         }
 
         // GET tables/Poll
-        public IQueryable<PollResults> GetAllPoll()
+        public IQueryable<Poll> GetAllPoll()
         {
             return Query(); 
         }
 
         // GET tables/Poll/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public SingleResult<PollResults> GetPoll(string id)
+        public SingleResult<Poll> GetPoll(string id)
         {
             return Lookup(id);
         }
 
         // PATCH tables/Poll/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public Task<PollResults> PatchPoll(string id, Delta<PollResults> patch)
+        public Task<Poll> PatchPoll(string id, Delta<Poll> patch)
         {
              return UpdateAsync(id, patch);
         }
 
         // POST tables/Poll
-        public async Task<IHttpActionResult> PostPoll(PollResults item)
+        public async Task<IHttpActionResult> PostPoll(Poll item)
         {
-            PollResults current = await InsertAsync(item);
+            Poll current = await InsertAsync(item);
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 

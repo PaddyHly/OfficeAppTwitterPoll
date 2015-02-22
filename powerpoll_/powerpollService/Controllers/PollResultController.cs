@@ -9,42 +9,42 @@ using powerpollService.Models;
 
 namespace powerpollService.Controllers
 {
-    public class PollResultController : TableController<PollResult>
+    public class PollResultController : TableController<Result>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
         {
             base.Initialize(controllerContext);
             powerpollContext context = new powerpollContext();
-            DomainManager = new EntityDomainManager<PollResult>(context, Request, Services);
+            DomainManager = new EntityDomainManager<Result>(context, Request, Services);
         }
 
-        // GET tables/PollResult
-        public IQueryable<PollResult> GetAllPollResult()
+        // GET tables/PollResults
+        public IQueryable<Result> GetAllPollResults()
         {
             return Query(); 
         }
 
-        // GET tables/PollResult/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public SingleResult<PollResult> GetPollResult(string id)
+        // GET tables/PollResults/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public SingleResult<Result> GetPollResults(string id)
         {
             return Lookup(id);
         }
 
-        // PATCH tables/PollResult/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public Task<PollResult> PatchPollResult(string id, Delta<PollResult> patch)
+        // PATCH tables/PollResults/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public Task<Result> PatchPollResults(string id, Delta<Result> patch)
         {
              return UpdateAsync(id, patch);
         }
 
-        // POST tables/PollResult
-        public async Task<IHttpActionResult> PostPollResult(PollResult item)
+        // POST tables/PollResults
+        public async Task<IHttpActionResult> PostPollResults(Result item)
         {
-            PollResult current = await InsertAsync(item);
+            Result current = await InsertAsync(item);
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
-        // DELETE tables/PollResult/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public Task DeletePollResult(string id)
+        // DELETE tables/PollResults/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public Task DeletePollResults(string id)
         {
              return DeleteAsync(id);
         }
