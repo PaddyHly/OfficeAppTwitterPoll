@@ -428,3 +428,6 @@ C:\Users\Pavel\Desktop\OfficeAppTwitterPoll\powerpoll_\powerpollService\bin\zh-H
 C:\Users\Pavel\Desktop\OfficeAppTwitterPoll\powerpoll_\powerpollService\obj\Debug\powerpollService.csprojResolveAssemblyReference.cache
 C:\Users\Pavel\Desktop\OfficeAppTwitterPoll\powerpoll_\powerpollService\obj\Debug\powerpollService.dll
 C:\Users\Pavel\Desktop\OfficeAppTwitterPoll\powerpoll_\powerpollService\obj\Debug\powerpollService.pdb
+C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\powerpoll_\powerpollService\obj\Debug\powerpollService.csprojResolveAssemblyReference.cache
+C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\powerpoll_\powerpollService\obj\Debug\powerpollService.dll
+C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\powerpoll_\powerpollService\obj\Debug\powerpollService.pdb
