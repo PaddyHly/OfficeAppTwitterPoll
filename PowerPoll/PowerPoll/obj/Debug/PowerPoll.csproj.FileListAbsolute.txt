@@ -18,3 +18,7 @@ C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Microsoft.Thre
 C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
 C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\obj\Debug\PowerPoll.csprojResolveAssemblyReference.cache
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\EntityFramework.dll
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\EntityFramework.xml
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\EntityFramework.SqlServer.xml

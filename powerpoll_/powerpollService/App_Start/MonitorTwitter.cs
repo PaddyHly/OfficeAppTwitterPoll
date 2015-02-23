@@ -13,16 +13,13 @@ using powerpollService.DataObjects;
 
 namespace powerpollService
 {
-    // A simple scheduled job which can be invoked manually by submitting an HTTP
-    // POST request to the path "/jobs/monitortwitter".
-
     public class MonitorTwitter
     {
         public static void monitor()
         {
             powerpollContext context = new powerpollContext();
             var stream = Stream.CreateUserStream();
-            stream.TweetCreatedByAnyoneButMe += (s, t) =>
+            stream.TweetCreatedByAnyone += (s, t) =>
             {
                 var hashtags = t.Tweet.Hashtags.ToArray()
                     .Select(x => x.Text.ToLowerInvariant());

@@ -22,3 +22,7 @@ C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\Autofac.xml
 C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\Microsoft.Threading.Tasks.xml
 C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\Microsoft.Threading.Tasks.Extensions.xml
 C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\Newtonsoft.Json.xml
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\EntityFramework.dll
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\EntityFramework.xml
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\EntityFramework.SqlServer.xml
