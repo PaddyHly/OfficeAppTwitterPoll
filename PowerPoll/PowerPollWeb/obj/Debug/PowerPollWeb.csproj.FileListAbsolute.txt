@@ -22,6 +22,7 @@ C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\Autofac.xml
 C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\Microsoft.Threading.Tasks.xml
 C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\Microsoft.Threading.Tasks.Extensions.xml
 C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\Newtonsoft.Json.xml
+<<<<<<< HEAD
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\PowerPollWeb.dll.config
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\PowerPollWeb.dll
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\PowerPollWeb.pdb
@@ -50,3 +51,9 @@ C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPoll
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\obj\Debug\PowerPollWeb.csprojResolveAssemblyReference.cache
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\obj\Debug\PowerPollWeb.dll
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\obj\Debug\PowerPollWeb.pdb
+=======
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\EntityFramework.dll
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\EntityFramework.xml
+C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPollWeb\bin\EntityFramework.SqlServer.xml
+>>>>>>> origin/master
