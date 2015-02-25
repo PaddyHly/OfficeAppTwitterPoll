@@ -236,6 +236,7 @@
     <Compile Include="DataObjects\Poll.cs" />
     <Compile Include="DataObjects\Result.cs" />
     <Compile Include="Models\powerpollContext.cs" />
+    <Compile Include="ScheduledJobs\DeleteOldJob.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
