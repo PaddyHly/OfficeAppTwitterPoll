@@ -1,24 +1,3 @@
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\PowerPoll.dll.config
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Autofac.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Microsoft.Threading.Tasks.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\PCLWebUtility.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Tweetinvi.Controllers.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Tweetinvi.Core.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Tweetinvi.Credentials.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Tweetinvi.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Tweetinvi.Factories.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Tweetinvi.Logic.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Tweetinvi.Security.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Tweetinvi.Streams.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Tweetinvi.WebLogic.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Autofac.xml
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Microsoft.Threading.Tasks.xml
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\obj\Debug\PowerPoll.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\PowerPoll.dll.config
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Autofac.dll
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\EntityFramework.dll
@@ -43,9 +22,3 @@ C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPoll
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Patrick Nally\Documents\GitHub\OfficeAppTwitterPoll\PowerPoll\PowerPoll\obj\Debug\PowerPoll.csprojResolveAssemblyReference.cache
-=======
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\EntityFramework.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\EntityFramework.xml
-C:\Users\Paddy\OfficeAppTwitterPoll\PowerPoll\PowerPoll\bin\Debug\EntityFramework.SqlServer.xml
->>>>>>> origin/master
