@@ -32,6 +32,7 @@ namespace powerpollService
                             if (t.Tweet.Text.Contains(result.Id))//if the tweet contains that results id
                             {
                                 result.Count++;
+                                
                             }
                         }
                     }

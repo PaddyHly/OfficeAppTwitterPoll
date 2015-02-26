@@ -32,7 +32,6 @@ namespace powerpollService
             Database.SetInitializer(new powerpollInitializer());
             new Thread(() =>
             {
-                Thread.CurrentThread.IsBackground = true;
                 MonitorTwitter.monitor();
             }).Start();
         }
