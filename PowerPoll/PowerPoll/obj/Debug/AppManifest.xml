@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="PowerPoll"
-     ProductID="{c479f8f0-4627-4718-bc9a-27885737a4db}"
+     ProductID="{1c4f4b15-3d67-474c-b7df-521e834e951e}"
      Version="1.0.0.0"
      SharePointMinVersion="15.0.0.0"
 >

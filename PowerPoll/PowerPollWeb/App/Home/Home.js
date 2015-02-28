@@ -9,8 +9,21 @@
             app.initialize();
 
             $('#get-data-from-selection').click(getDataFromSelection);
+            $('#addKeyword').click(addKeyword);
         });
     };
+
+    var count = 3;
+    var max = 6;
+    function addKeyword() {
+        if (count <= max) {
+            $('#keywords').append('<br>Keyword ' + count + ':  <input type="text" placeholder="Enter Keyword" id="key' + count + '" name="keyword"/>');
+            count++;
+        }
+        if(count > max){
+            $('#addKeyword').remove();
+        }
+    }
 
     // Reads data from current document selection and displays a notification
     function getDataFromSelection() {

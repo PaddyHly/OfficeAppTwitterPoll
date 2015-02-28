@@ -1,2 +1,31 @@
 ﻿/* Page-specific styling */
 
+h1{
+    position: absolute;
+    color: #ffffff;
+    font-family: Calibri;
+    top: 20px;
+    left: 10%;
+}
+
+#input{
+    position: relative;
+    left: 10%;
+}
+
+#header{
+    position: relative;
+    top: -15px;
+    background-color: #d24726;
+    height: 60px;
+}
+
+input[type="button"]{
+    position: absolute;
+    color: #ffffff;
+	background-color: #d24726;
+}
+
+input[type="button"]:hover{
+    background-color: #ff6a00;
+}

@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <title>#PowerPoll</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         
@@ -10,6 +11,7 @@
     <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+    <script src="/wp-includes/js/addInput.js" language="Javascript" type="text/javascript"></script>
    
         
 
@@ -22,362 +24,101 @@
 
         <link href="Home.css" rel="stylesheet" type="text/css" />
         <script src="Home.js" type="text/javascript"></script>
-
-    <title> PowerPoll </title>
-
-    <style type="text/css">
-        #pie {
-            position: absolute;
-            top: 100px;
-            left: 625px;
-        }
-
-        #BarChart {
-            position: absolute;
-            top: 100px;
-            left: 625px;
-        }
-
-        #header {
-            position: absolute;
-            top: 40px;
-            left: 625px;
-        }
-
-        #pages {
-            position: absolute;
-            top: 25px;
-            left: 625px;
-        }
-
-        #myList {
-            position: absolute;
-            top: 150px;
-            left: 625px;
-        }
-
-        #myListText {
-            position: absolute;
-            top: 100px;
-            left: 625px;
-        }
-
-        #chosen {
-            position: absolute;
-            top: 30px;
-            left: 0px;
-        }
-
-        #chosenText {
-            position: absolute;
-            top: 175px;
-            left: 625px;
-        }
-
-        #bird {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-        }
-
-        #EnterOne {
-            position: absolute;
-            top: 225px;
-            left: 900px;
-        }
-
-        #EnterTwo {
-            position: absolute;
-            top: 275px;
-            left: 900px;
-        }
-
-        #NumberAnswersText {
-            position: absolute;
-            top: 180px;
-            left: 625px;
-        }
-
-        #NumberAnswers {
-            position: absolute;
-            top: 30px;
-            left: 0px;
-        }
-
-        #EnteredText {
-            position: absolute;
-            top: 275px;
-            left: 625px;
-        }
-
-        text {
-            font-family: Arial;
-            font-size: 30px;
-            fill: black;
-        }
-
-        span {
-            text-decoration: underline;
-            color: red;
-            cursor: pointer;
-        }
-
-
-        .chart rect {
-            stroke: white;
-            fill: red;
-        }
-
-        .chart text {
-            fill: white;
-            font: 10px sans-serif;
-            text-anchor: end;
-        }
-
-        select {
-            color: black;
-        }
-    </style>
-
-    </head>
-<body bgcolor ="#FFFFFF">
-    <svg width="1340" height="645">
-        <rect x="1050" y="0" width="300px" height="650px"
-              style="fill:red;fill-opacity:1;" />
-        <rect x="0" y="0" width="500px" height="650px"
-              style="fill:red;fill-opacity:1;"  />
-        <rect x="0" y="50" width="500px" height="650px"
-              style="fill:blue;fill-opacity:1;"  />
-    </svg>
-    <div id="line" class="line"></div>
-
-    <div id="rectangle"></div>
-    <div id="rectangle2"></div>
-
-    <a id="pages">
-        Show page
-        <span style="color:#d24726" onclick="show('Page1');">Pie</span>,
-        <span style="color:#d24726" onclick="show('Page2');">Bar</span>,
-        <span style="color:#d24726" onclick="show('Page3');">3</span>.
-    </a>
-    <script>
-        // show the given page, hide the rest
-        function show(elementID) {
-            //find the requested page and alert if it's not found
-            var element = document.getElementById(elementID);
-            if (!element) {
-                alert("no such element");
-                return;
-            }
-            //gets all the pages, loops through them and hides them
-            var pages = document.getElementsByClassName('page');
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].style.display = 'none';
-            }
-            //shows the requested page
-            ele.style.display = 'block';
-        }
-
-    </script>
-    <h1 style="color:#d24726" id="header">
-        <font face="Calibri" size="10" style="Color:#d24726">
-            #POWERPOLL
-        </font>
-    </h1>
-    <form id=Form1>
-
-        <p id="myListText" size="40">Select what type of chart you would like: </p>
-        <select style="border:2px solid #d24726 " id="myList" onchange="chosenChart()">
-            <option> Choose Chart </option>
-            <option>--------------</option>
-            <option>Pie Chart</option>
-            <option>Bar Chart</option>
-        </select>
-
-        <p id="HashText"><input type="text" name="myTextBox" size="30" id="EnteredText" style="border:2px solid #d24726" /></p>
-        <button style="color:black" id="EnterTwo" onclick="hashtag()" style="border:2px solid #d24726">Enter</button>
-
-        <p id="NumberAnswersText">How many answers do you want? : <input color="red" type="text" id="NumberAnswers" size="30" style="border:2px solid #d24726"></p>
-        <button style="color:black" id="EnterOne" onclick="pieChart()">Enter</button>
-
-    </form>
-    <div id="chart"></div>
-    <script type="text/javascript" id="pie">
-
-        function pieChart() {
-            var w = window,
-            d = document,
-            e = d.documentElement,
-            g = d.getElementsByTagName('body')[0],
-            x = w.innerWidth || e.clientWidth || g.clientWidth,
-            y = w.innerHeight || e.clientHeight || g.clientHeight;
-
-            var canvasWidth = 1000, //width
-              canvasHeight = 1000,   //height
-              outerRadius = 150,   //radius
-              color = d3.scale.category20(); //range of colours
-
-            var myData = [
-              { "legendLabel": "Paris", "value": 1000 },
-              { "legendLabel": "Berlin", "value": 3000 },
-              { "legendLabel": "Madrid", "value": 5000 },
-              { "legendLabel": "Dublin", "value": 16000 }];
-
-            var vis = d3.select("body")
-              .append("svg:svg") //creating an SVG element
-                .data([myData]) //our data
-                .attr("width", x) //canvas width
-                .attr("height", y) //canvas height
-                .append("svg:g") //this holds our pie chart
-                .attr("transform", "translate(" + (x / 2) + "," + (y / 2) + ")") //relocate centre of chart to 'outerRadius,outerRadius'
-
-            // This creates <path> elements for us using arc data...
-            var arc = d3.svg.arc()
-              .outerRadius(outerRadius);
-
-            var pie = d3.layout.pie() //this creates arc data for us given array of values
-              .value(function (d) { return d.value; }) //connects each value to chart
-              .sort(function (d) { return null; });
-
-            var arcs = vis.selectAll("g.slice")
-              // generated pie data with a start angle and end angle
-              .data(pie)
-              .enter()
-              //creates group to hold each segment
-              .append("svg:g")
-              .attr("class", "slice");
-
-            arcs.append("svg:path")
-              //setting the colour for each slice
-              .attr("fill", function (d, i) { return color(i); })
-              //this creates the actual SVG path using our data with the arc drawing function
-              .attr("d", arc);
-
-            // adding label
-            arcs.append("svg:text")
-              .attr("transform", function (d) { //label origin = centre of the arc
-                  d.outerRadius = outerRadius + 50; // Set Outer Coordinate
-                  d.innerRadius = outerRadius + 65; // Set Inner Coordinate
-                  return "translate(" + arc.centroid(d) + ")";
-              })
-              .attr("text-anchor", "middle") //centre text on origin
-              .style("fill", "black")
-              .style("font", "bold 20px Times New Roman")
-              .text(function (d, i) { return myData[i].legendLabel; }); //get the label from our original data array
-
-
-            arcs.filter(function (d) { return d.endAngle - d.startAngle > .2; }).append("svg:text")
-              .attr("dy", ".35em")
-              .attr("text-anchor", "middle")
-              .attr("transform", function (d) { //set the label's origin to the centre of the arc
-                  //these MUST be set before calling arc.centroid
-                  d.outerRadius = outerRadius;
-                  d.innerRadius = outerRadius / 2;
-                  return "translate(" + arc.centroid(d) + ")rotate(" + angle(d) + ")";
-              })
-              .style("fill", "White")
-              .style("font", "bold 12px Arial")
-              .text(function (d) { return d.data.value; });
-
-            //converting from radians to degrees.
-            function angle(d) {
-                var a = (d.startAngle + d.endAngle) * 90 / Math.PI - 90;
-                return a > 90 ? a - 180 : a;
-            }
-        }
-
-
-    </script>
-
-    <script>
-        var client = new WindowsAzure.MobileServiceClient(
-        "http://powerpoll.azure-mobile.net/",
-        "zKZEZggVbgQIpzwZuJTtVmHNYRJZtx79");
-        var table = client.getTable("bestanimal");
-    </script>
-
-    <script type="text/javascript" id="BarChart">
-        function barChart() {
-            var w = 500,
-            h = 100;
-
-            var svg = d3.select("#chart")
-                .append("svg")
-                .attr("width", w)
-                .attr("height", h);
-
-            d3.json("bars.json", function (json) {
-
-                var data = json.items;
-
-                var max_count = 0;
-                for (var d in data) {
-                    max_n = Math.max(data[d].count, max_count);
-                }
-
-                var dx = w / max_count;
-                var dy = h / data.length;
-
-                // bars
-                var bars = svg.selectAll(".bar")
-                    .data(data)
-                    .enter()
-                    .append("rect")
-                    .attr("class", function (d, i) { return "bar " + d.keyword; })
-                    .attr("x", function (d, i) { return 0; })
-                    .attr("y", function (d, i) { return dy * i; })
-                    .attr("width", function (d, i) { return dx * d.count })
-                    .attr("height", dy);
-
-                // labels
-                var text = svg.selectAll("text")
-                    .data(data)
-                    .enter()
-                    .append("text")
-                    .attr("class", function (d, i) { return "label " + d.keyword; })
-                    .attr("x", 5)
-                    .attr("y", function (d, i) { return dy * i + 15; })
-                    .text(function (d) { return d.keyword + " (" + d.count + ")"; })
-                    .attr("font-size", "15px")
-                    .style("font-weight", "bold");
-            });
-        }
-    </script>
-
-    <script type="text/javascript">
-        function answerOne() {
-
-        }
-        function chosenChart() {
-            var chosenChart = document.getElementById("myList").value = myList.options[myList.selectedIndex].text;
-            if (chosenChart === "Pie Chart") {
-                pieChart();
-            }
-            if (chosenChart === "Bar Chart") {
-                barChart();
-
-            }
-        }
-    </script>
-
-    <script>
-        function hashtag() {
-            var theHashTag = document.getElementById("EnteredText").value
-            alert(theHashTag);
-            //document.getElementById("chosen").value=myList.options[myList.selectedIndex].text;
-        }
-    </script>
-    <div id="content-main">
-        <div class="padding">
-            <h1>Welcome</h1>
-            <p>This example will read the current document selection.</p>
-            <button id="get-data-from-selection">Get data from selection</button>
-
-            <p style="margin-top: 30px;">
-                <a target="_blank" href="https://go.microsoft.com/fwlink/?LinkId=276813">Find more samples online...</a>
-            </p>
-        </div>
+        <script>
+            var client = new WindowsAzure.MobileServiceClient(
+                "https://powerpoll.azure-mobile.net/",
+                "zKZEZggVbgQIpzwZuJTtVmHNYRJZtx79"
+            );
+        </script>
+</head>
+<body>
+    <div id="header">
+        <h1>#PowerPoll</h1>
     </div>
-    </body>
+    <div id="keyData">
+        <key>Poll Hashtag: #</key>
+        <input type="text" placeholder="PollName" id="hashtag" />
+        <br>
+        <length>Duration: <input type="number" min="1" max="30" id="length" />(mins)</length>
+    </div>
+    <div id="graphSelect">
+        <graph>Graph Style</graph>
+        <select>
+            <option value="bar">Bar Graph</option>
+            <option value="pie">Pie Chart</option>
+        </select>
+    </div>
+    <div id="keywords">
+        <br>Keyword 1:  <input type="text" placeholder="Enter Keyword" id="key1" name="keyword"/>
+        <br>Keyword 2:  <input type="text" placeholder="Enter Keyword" id="key2" name="keyword"/>
+    </div>
+    <input type="button" id="addKeyword" value="+ Keyword" />
+    <br><input type="button" id="createPoll" value="Create Poll" onclick="createPoll();"/>
+    <script>
+        function createPoll() {
+            var hashtag = $('#hashtag').val();
+            var duration = parseInt($('#length').val());
+            var length = document.getElementsByName('keyword').length; //get number of keyword boxes added
+            var keywords = new Array(length);
+            for (var i = 0; i < keywords.length; i++) {
+                keywords[i] = {
+                    count: 0,
+                    pollId: hashtag,
+                    id: $('#key' + (i+1)).val()
+                };
+            }
+            var date = new Date();
+            date.setMinutes(date.getMinutes() + duration);
+            var dateString = dateToDateTime(date);
+            console.log(dateString);
+            var input = {
+                end_Time: dateString,
+                results: keywords,
+                id: hashtag
+            }
+            var table = client.getTable('Poll');
+            table.insert(input);
+            /*client.getTable('Poll').read().done(function (results) {
+                console.log(JSON.stringify(results));
+            });*/
+        }
+
+        //needs to be neatened up
+        function dateToDateTime(date){
+            var dateString = date.getFullYear()+'-';
+            if(date.getMonth()+1 < 10){
+                dateString += '0' + (date.getMonth()+1) + '-';
+            }
+            else{
+                dateString += (date.getMonth()+1)+'-';
+            }
+            if(date.getDate() < 10){
+                dateString += '0' + date.getDate()+'T';
+            }
+            else{
+                dateString += date.getDate()+'T';
+            }
+            if(date.getHours() < 10){
+                dateString += '0' + date.getHours()+':';
+            }
+            else{
+                dateString += date.getHours()+':';
+            }
+            if(date.getMinutes() < 10){
+                dateString += '0' + date.getMinutes()+':';
+            }
+            else{
+                dateString += date.getMinutes()+':';
+            }
+            if(date.getSeconds() < 10){
+                dateString += '0' + date.getSeconds()+'Z';
+            }
+            else{
+                dateString += date.getSeconds()+'Z';
+            }
+            return dateString;
+        }
+    </script>
+</body>
 </html>
 

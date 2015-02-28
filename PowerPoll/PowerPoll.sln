@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerPoll", "PowerPoll\Powe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerPollWeb", "PowerPollWeb\PowerPollWeb.csproj", "{14F9D02F-55FE-4B11-BD1B-FB90ACA0DFDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "powerpollService", "..\powerpoll_\powerpollService\powerpollService.csproj", "{209FA716-A7AD-4095-BD70-C8710FC66FA7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,10 +23,6 @@ Global
 		{14F9D02F-55FE-4B11-BD1B-FB90ACA0DFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14F9D02F-55FE-4B11-BD1B-FB90ACA0DFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14F9D02F-55FE-4B11-BD1B-FB90ACA0DFDB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
