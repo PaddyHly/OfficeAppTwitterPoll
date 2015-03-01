@@ -20,12 +20,50 @@ h1{
     height: 60px;
 }
 
+#key{
+    position: absolute;
+    left: 30px;
+    top: 10%;
+}
+
+#duration{
+    position: absolute;
+    left: 30px;
+    top: 15%;
+}
+
+#graphSelect{
+    position:absolute;
+    left: 30px;
+    top: 20%;
+}
+
+#keywords{
+    position: absolute;
+    left: 30%;
+    top: 30%;
+}
+
+#addKeyword{
+    position: absolute;
+    width: 15%;
+    top: 90%;
+}
+
+#createPoll {
+    position: absolute;
+    top: 90%;
+    width: 30%;
+    left:70%;
+}
+
 input[type="button"]{
     position: absolute;
     color: #ffffff;
 	background-color: #d24726;
+    height: 10%;
 }
 
 input[type="button"]:hover{
-    background-color: #ff6a00;
+    background-color: #00ff90;
 }
