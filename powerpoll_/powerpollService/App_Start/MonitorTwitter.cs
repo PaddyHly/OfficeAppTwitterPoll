@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using Microsoft.WindowsAzure.Mobile.Service;
 using Microsoft.WindowsAzure.Mobile.Service.ScheduledJobs;
 using Tweetinvi;
@@ -27,12 +28,16 @@ namespace powerpollService
                 {
                     if (hashtags.Contains(poll.Id))//if the tweet contains the poll Id as a hashtag
                     {
-                        foreach (Result result in poll.Results.ToArray())//go through the results of that poll
+                        var tweetWords = Regex.Split(t.Tweet.Text,"\\s|,|/.|'|\"");//get the individual words
+                        foreach (string word in tweetWords)
                         {
-                            if (t.Tweet.Text.Contains(result.Id))//if the tweet contains that results id
+                            foreach (Result result in poll.Results.ToArray())//go through the results of that poll
                             {
-                                result.Count++;
-                                context.SaveChangesAsync();
+                                if (result.Id.Equals(word))
+                                {
+                                    result.Count++;
+                                    context.SaveChangesAsync();
+                                }
                             }
                         }
                     }
