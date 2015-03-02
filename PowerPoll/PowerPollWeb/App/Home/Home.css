@@ -1,47 +1,38 @@
 ﻿/* Page-specific styling */
 
 h1{
-    position: absolute;
-    color: #ffffff;
-    font-family: Calibri;
-    top: 20px;
-    left: 10%;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin:0px;
 }
 
 #input{
     position: relative;
-    left: 10%;
-}
-
-#header{
-    position: relative;
-    top: -15px;
-    background-color: #d24726;
-    height: 60px;
+    left: 25%;
 }
 
 #key{
     position: absolute;
     left: 30px;
-    top: 10%;
+    top: 30%;
 }
 
 #duration{
     position: absolute;
     left: 30px;
-    top: 15%;
+    top: 35%;
 }
 
 #graphSelect{
     position:absolute;
     left: 30px;
-    top: 20%;
+    top: 40%;
 }
 
 #keywords{
     position: absolute;
     left: 30%;
-    top: 30%;
+    top: 50%;
 }
 
 #addKeyword{
