@@ -72,13 +72,14 @@
                 id: hashtag
             }
             var table = client.getTable('Poll');
-            /*table.insert(input);
-            client.getTable('Poll').read().done(function (results) {
+            table.insert(input);
+            //console.log(JSON.stringify(input));
+            /*client.getTable('Poll').read().done(function (results) {
                 console.log(JSON.stringify(results));
             });*/
             var graphType = $('#select').val();
             if (graphType == "bar") {
-                open("Bar.html?duration=" + duration + "&hash=" + hashtag, "_self");
+                window.setTimeout(function () { open("Bar.html?duration=" + duration + "&hash=" + hashtag, "_self")}, 500);
             }
         }
 
