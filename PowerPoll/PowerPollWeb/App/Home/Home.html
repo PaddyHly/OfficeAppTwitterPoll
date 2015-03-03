@@ -34,9 +34,9 @@
     <h1>
         <img src="../../Images/head.png" style="width:100%; height:100%;">
     </h1>
-    <div id="key">Poll Hashtag: #<input type="text" placeholder="PollName" id="hashtag" /></div>
+    <div id="key">Poll Hashtag: #<input type="text" placeholder="PollName" id="hashtag" style="border-radius: 3px;" /></div>
     <br />
-    <div id="duration">Duration: <input type="number" min="1" max="30" id="length" placeholder="max 30mins" />(mins)</div>
+    <div id="duration">Duration: <input type="number" min="1" max="30" id="length" placeholder="max 30mins" style="border-radius: 3px;" /> (mins)</div>
     <div id="graphSelect">
         <graph>Graph Style</graph>
         <select id="select">
@@ -45,11 +45,11 @@
         </select>
     </div>
     <div id="keywords">
-        <br>Keyword 1:  <input type="text" placeholder="Enter Keyword" id="key1" name="keyword"/>
-        <br>Keyword 2:  <input type="text" placeholder="Enter Keyword" id="key2" name="keyword"/>
+        <br>Keyword 1:  <input type="text" placeholder="Enter Keyword" id="key1" name="keyword" style="border-radius: 3px;" />
+        <br>Keyword 2:  <input type="text" placeholder="Enter Keyword" id="key2" name="keyword" style="border-radius: 3px;" />
     </div>
-    <input type="button" id="addKeyword" value="+ Keyword" />
-    <br><input type="button" id="createPoll" value="Create Poll" onclick="createPoll();"/>
+    <input type="button" id="addKeyword" value="+ Keyword" style="border-radius: 5px;" />
+    <br><input type="button" id="createPoll" value="Create Poll" onclick="createPoll();" style="border-radius: 5px;"/>
     <script>
         function createPoll() {
             var hashtag = $('#hashtag').val();

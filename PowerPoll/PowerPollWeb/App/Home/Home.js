@@ -17,7 +17,7 @@
     var max = 6;
     function addKeyword() {
         if (count <= max) {
-            $('#keywords').append('<br>Keyword ' + count + ':  <input type="text" placeholder="Enter Keyword" id="key' + count + '" name="keyword"/>');
+            $('#keywords').append('<br>Keyword ' + count + ':  <input type="text" placeholder="Enter Keyword" id="key' + count + '" name="keyword"/ style="border-radius: 3px;">');
             count++;
         }
         if(count > max){
