@@ -23,14 +23,18 @@ namespace PowerpollTests
             string hashtag = Guid.NewGuid().ToString();
             List<Result> results = new List<Result>
             {
-                new Result { Id = result1_Id, Count = 2 },
-                new Result { Id = result2_Id, Count = 3 }
+                new Result { Id = result1_Id, Count = 2, PollId = hashtag },
+                new Result { Id = result2_Id, Count = 3, PollId = hashtag }
             };
 
             Poll poll = new Poll { Id = hashtag, End_Time = DateTime.Now, Results = results };
-            context.Polls.Add(poll);
+            /*foreach (Poll p in context.Polls)
+            {
+                Console.WriteLine(p.Id);
+            }
+            //context.Polls.Add(poll);
             //context.Set<Poll>().Add(poll);
-
+            /*
             context.SaveChanges();
             polls = context.Polls;
             foreach (Poll i in polls)
@@ -47,6 +51,7 @@ namespace PowerpollTests
                     }
                 }
             }
+             * */
         }
     }
 }

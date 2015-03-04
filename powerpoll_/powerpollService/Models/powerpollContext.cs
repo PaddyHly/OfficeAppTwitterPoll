@@ -33,8 +33,6 @@ namespace powerpollService.Models
                 modelBuilder.HasDefaultSchema(schema);
             }
 
-            //modelBuilder.Entity<Poll>().HasKey(s => s.PollId);
-
             modelBuilder.Entity<Result>()
                 .HasKey(s => new { s.Id, s.PollId });
 
