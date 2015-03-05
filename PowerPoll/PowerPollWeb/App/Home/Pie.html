@@ -90,7 +90,7 @@
         var key = function (d) { return d.data.id; };
 
         var color = d3.scale.ordinal()
-			.range(["#FFFF0000", "#FF0095D9", "#FF008E5B", "#FF0297BA", "#FF0297BA", "#FF713697", "#FF8AC819"]);
+			.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
         //draw the pie chart with one for each value (covers time till first vote)
         client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
