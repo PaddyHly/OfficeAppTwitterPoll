@@ -18,7 +18,7 @@
     var max = 6;
     function addKeyword() {
         if (count <= max) {
-            $('#keywords').append('<br>Keyword ' + count + ':  <input type="text" placeholder="Enter Keyword" id="key' + count + '" name="keyword"/ style="border-radius: 3px;">');
+            $('#keywords').append('<p>Keyword ' + count + ':  <input type="text" placeholder="Enter Keyword" id="key' + count + '" name="keyword"/ style="border-radius: 3px;"></p>');
             count++;
         }
         if (count > max) {
@@ -29,7 +29,7 @@
     function removeKeyword() {
         if (count > 3) {
             count--;
-            $('#key' + count).remove();     // removes the bar not the text
+            $('#key' + count).parent('p').remove();     // removes the bar not the text
 
             $('#addKeyword').removeAttr('disabled');    // enables the add button
 

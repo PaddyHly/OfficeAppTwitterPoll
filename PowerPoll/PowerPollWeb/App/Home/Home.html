@@ -40,8 +40,8 @@
     <input type="image" src="../../Images/barchartIcon.jpg" width="10%" height="15%" style="position:absolute; top:85%; left:75%;border-style:solid; border-color:#d24726; border-radius:5px;" onclick="createPoll('bar')">
     <input type="image" src="../../Images/piechartIcon.jpg" width="10%" height="15%" style="position:absolute; top:85%; left:90%;border-style:solid; border-color:#d24726; border-radius:5px;" onclick="createPoll('pie')">
     <div id="keywords">
-        <br>Keyword 1:  <input type="text" placeholder="Enter Keyword" id="key1" name="keyword" style="border-radius: 3px;" />
-        <br>Keyword 2:  <input type="text" placeholder="Enter Keyword" id="key2" name="keyword" style="border-radius: 3px;" />
+        <p>Keyword 1:  <input type="text" placeholder="Enter Keyword" id="key1" name="keyword" style="border-radius: 3px;" /></p>
+        <p>Keyword 2:  <input type="text" placeholder="Enter Keyword" id="key2" name="keyword" style="border-radius: 3px;" /></p>
     </div>
     <input type="button" id="addKeyword" value="+ Keyword" style="border-radius: 5px;" />
     <input type="button" id="removeKeyword" value="- Keyword" style="border-radius: 5px;" />
@@ -73,10 +73,10 @@
             client.getTable('Poll').read().done(function (results) {
             });
             if (graphType == "bar") {
-                window.setTimeout(function () { open("Bar.html?duration=" + duration + "&hash=" + hashtag, "_self")}, 500);
+                window.setTimeout(function () { open("Bar.html?duration=" + duration + "&hash=" + hashtag, "_self")}, 1000);
             }
             else if (graphType == "pie") {
-                window.setTimeout(function () { open("Pie.html?duration=" + duration + "&hash=" + hashtag, "_self") }, 500);
+                window.setTimeout(function () { open("Pie.html?duration=" + duration + "&hash=" + hashtag, "_self") }, 1000);
             }
         }
 
