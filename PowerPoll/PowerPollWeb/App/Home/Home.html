@@ -37,21 +37,16 @@
     <div id="key">Poll Hashtag: #<input type="text" placeholder="PollName" id="hashtag" style="border-radius: 3px;" /></div>
     <br />
     <div id="duration">Duration: <input type="number" min="1" max="30" id="length" placeholder="max 30mins" style="border-radius: 3px;" /> (mins)</div>
-    <div id="graphSelect">
-        <graph>Graph Style</graph>
-        <select id="select">
-            <option value="bar">Bar Graph</option>
-            <option value="pie">Pie Chart</option>
-        </select>
-    </div>
+    <input type="image" src="../../Images/barchartIcon.jpg" width="10%" height="15%" style="position:absolute; top:85%; left:75%;border-style:solid; border-color:#d24726; border-radius:5px;" onclick="createPoll('bar')">
+    <input type="image" src="../../Images/piechartIcon.jpg" width="10%" height="15%" style="position:absolute; top:85%; left:90%;border-style:solid; border-color:#d24726; border-radius:5px;" onclick="createPoll('pie')">
     <div id="keywords">
         <br>Keyword 1:  <input type="text" placeholder="Enter Keyword" id="key1" name="keyword" style="border-radius: 3px;" />
         <br>Keyword 2:  <input type="text" placeholder="Enter Keyword" id="key2" name="keyword" style="border-radius: 3px;" />
     </div>
     <input type="button" id="addKeyword" value="+ Keyword" style="border-radius: 5px;" />
-    <br><input type="button" id="createPoll" value="Create Poll" onclick="createPoll();" style="border-radius: 5px;"/>
+    <br>
     <script>
-        function createPoll() {
+        function createPoll(graphType) {
             var hashtag = $('#hashtag').val();
             var duration = parseInt($('#length').val());
             var length = document.getElementsByName('keyword').length; //get number of keyword boxes added
@@ -77,10 +72,10 @@
             /*client.getTable('Poll').read().done(function (results) {
                 console.log(JSON.stringify(results));
             });*/
-            var graphType = $('#select').val();
             if (graphType == "bar") {
                 window.setTimeout(function () { open("Bar.html?duration=" + duration + "&hash=" + hashtag, "_self")}, 500);
             }
+            else if (graphType == "pie") { }
         }
 
         //needs to be neatened up

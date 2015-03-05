@@ -23,12 +23,6 @@ h1{
     top: 35%;
 }
 
-#graphSelect{
-    position:absolute;
-    left: 30px;
-    top: 40%;
-}
-
 #keywords{
     position: absolute;
     left: 30%;
@@ -39,13 +33,6 @@ h1{
     position: absolute;
     width: 15%;
     top: 90%;
-}
-
-#createPoll {
-    position: absolute;
-    top: 90%;
-    width: 30%;
-    left:70%;
 }
 
 input[type="button"]{
