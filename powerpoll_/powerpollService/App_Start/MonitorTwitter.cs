@@ -26,17 +26,20 @@ namespace powerpollService
                     .Select(x => x.Text.ToLowerInvariant());
                 foreach (Poll poll in context.Polls.ToArray())//go through all the polls
                 {
-                    if (hashtags.Contains(poll.Id))//if the tweet contains the poll Id as a hashtag
+                    foreach (String hashtag in hashtags)//if the tweet contains the poll Id as a hashtag
                     {
-                        var tweetWords = Regex.Split(t.Tweet.Text,"\\s|,|/.|'|\"");//get the individual words
-                        foreach (string word in tweetWords)
+                        if (hashtag.ToLowerInvariant().Equals(poll.Id.ToLowerInvariant()))
                         {
-                            foreach (Result result in poll.Results.ToArray())//go through the results of that poll
+                            var tweetWords = Regex.Split(t.Tweet.Text,"\\s|,|/.|'|\"");//get the individual words
+                            foreach (string word in tweetWords)
                             {
-                                if (result.Id.Equals(word))
+                                foreach (Result result in poll.Results.ToArray())//go through the results of that poll
                                 {
-                                    result.Count++;
-                                    context.SaveChangesAsync();
+                                    if (result.Id.ToLowerInvariant().Equals(word.ToLowerInvariant()))
+                                    {
+                                        result.Count++;
+                                        context.SaveChangesAsync();
+                                    }
                                 }
                             }
                         }

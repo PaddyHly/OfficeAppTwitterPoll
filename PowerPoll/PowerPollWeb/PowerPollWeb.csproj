@@ -127,6 +127,8 @@
     <None Include="js\MobileServices.intellisense.js" />
     <Content Include="App\Home\Bar.css" />
     <Content Include="App\Home\Bar.html" />
+    <Content Include="App\Home\Pie.css" />
+    <Content Include="App\Home\Pie.html" />
     <Content Include="Images\barchartIcon.jpg" />
     <Content Include="Images\head.png" />
     <Content Include="Images\piechartIcon.jpg" />

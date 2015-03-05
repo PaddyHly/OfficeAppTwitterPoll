@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>#PowerPoll</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+
+    <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+    <script src="/wp-includes/js/addInput.js" language="Javascript" type="text/javascript"></script>
+
+
+
+    <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
+    <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  -->
+    <!-- <script src="../../Scripts/Office/1.1/office.js" type="text/javascript"></script>  -->
+
+    <link href="../App.css" rel="stylesheet" type="text/css" />
+    <script src="../App.js" type="text/javascript"></script>
+
+    <link href="Pie.css" rel="stylesheet" type="text/css" />
+    <!--<script src="Bar.js" type="text/javascript"></script>-->
+    <script>
+        Office.initialize = function (reason) {
+            $(document).ready(function () {
+                app.initialize();
+            });
+        };
+        var client = new WindowsAzure.MobileServiceClient(
+            "https://powerpoll.azure-mobile.net/",
+            "zKZEZggVbgQIpzwZuJTtVmHNYRJZtx79"
+        );
+    </script>
+    <script>
+        function getQueryParams(qs) {
+            qs = qs.split("+").join(" ");
+
+            var params = {}, tokens,
+                re = /[?&]?([^=]+)=([^&]*)/g;
+
+            while (tokens = re.exec(qs)) {
+                params[decodeURIComponent(tokens[1])]
+                    = decodeURIComponent(tokens[2]);
+            }
+            return params;
+        }
+    </script>
+</head>
+<!--************************************************************************************************************************************-->
+<body>
+    <div class="chart"></div>
+    <script>
+        var args = getQueryParams(document.location.search);
+
+        var svg = d3.select("body")
+			.append("svg")
+			.append("g")
+
+        svg.append("g")
+			.attr("class", "slices");
+        svg.append("g")
+			.attr("class", "labels");
+        svg.append("g")
+			.attr("class", "lines");
+
+        var width = 960,
+		    height = 450,
+			radius = Math.min(width, height) / 2;
+
+        var pie = d3.layout.pie()
+			.sort(null)
+			.value(function (d) {
+			    return d.count;
+			});
+
+        var arc = d3.svg.arc()
+			.outerRadius(radius)
+			.innerRadius(0);
+
+        var outerArc = d3.svg.arc()
+			.outerRadius(radius)
+			.innerRadius(radius);
+
+        svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        var key = function (d) { return d.data.id; };
+
+        var color = d3.scale.ordinal()
+			.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+        //draw the pie chart with one for each value (covers time till first vote)
+        client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
+            for (var i = 0; i < data.length; i++) {
+                data[i].count = 1;
+            }
+            var slice = svg.select(".slices").selectAll("path.slice")
+				.data(pie(data), key);
+
+            slice.enter()
+				.insert("path")
+				.style("fill", function (d) { return color(d.data.id); })
+				.attr("class", "slice");
+
+            slice
+				.transition().duration(500)
+				.attrTween("d", function (d) {
+				    this._current = this._current || d;
+				    var interpolate = d3.interpolate(this._current, d);
+				    this._current = interpolate(0);
+				    return function (t) {
+				        return arc(interpolate(t));
+				    };
+				})
+
+            slice.exit().remove();
+
+            var text = svg.select(".labels").selectAll("text")
+				.data(pie(data), key);
+
+            text.enter()
+				.append("text")
+				.attr("dy", ".35em")
+				.text(function (d) { return d.data.id; });
+
+            text.transition().duration(500)
+				.attr("transform", function (d) {
+				    if (d.data.count)
+				        return "translate(" + arc.centroid(d) + ")";
+				    else
+				        return "translate( -1000, -1000 )"
+				})
+				.style("text-anchor", "middle");
+
+            text.exit()
+				.remove();
+
+        });
+
+        update(args.hash);
+        function update(hash) {
+            client.getTable('Result').where({ pollId: args.hash }).read().done( function (data) {
+
+                var noVotes = true;
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].count != 0) {
+                        noVotes = false;
+                    }
+                }
+                if (!noVotes) {
+                    var slice = svg.select(".slices").selectAll("path.slice")
+						.data(pie(data), key);
+
+                    slice.enter()
+						.insert("path")
+						.style("fill", function (d) { return color(d.data.id); })
+						.attr("class", "slice");
+
+                    slice
+						.transition().duration(500)
+						.attrTween("d", function (d) {
+						    this._current = this._current || d;
+						    var interpolate = d3.interpolate(this._current, d);
+						    this._current = interpolate(0);
+						    return function (t) {
+						        return arc(interpolate(t));
+						    };
+						})
+
+                    slice.exit().remove();
+
+                    var text = svg.select(".labels").selectAll("text")
+						.data(pie(data), key);
+
+                    text.enter()
+						.append("text")
+						.attr("dy", ".35em")
+						.text(function (d) { return d.data.id; });
+
+                    text.transition().duration(500)
+						.attr("transform", function (d) {
+						    if (d.data.count)
+						        return "translate(" + arc.centroid(d) + ")";
+						    else
+						        return "translate( -1000, -1000 )"
+						})
+						.style("text-anchor", "middle");
+
+                    text.exit()
+						.remove();
+                }
+
+            });
+            window.setTimeout(update, 500);
+        }
+    </script>
+
+</body>
+</html>
