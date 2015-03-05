@@ -52,9 +52,11 @@
 </head>
 <!--************************************************************************************************************************************-->
 <body>
+    <div id="hashtag"></div>
     <div class="chart"></div>
     <script>
         var args = getQueryParams(document.location.search);
+        document.getElementById("hashtag").innerHTML = ('#' + args.hash);
 
         var svg = d3.select("body")
 			.append("svg")

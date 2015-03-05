@@ -10,6 +10,7 @@
 
             $('#get-data-from-selection').click(getDataFromSelection);
             $('#addKeyword').click(addKeyword);
+            $('#removeKeyword').click(removeKeyword);
         });
     };
 
@@ -20,8 +21,18 @@
             $('#keywords').append('<br>Keyword ' + count + ':  <input type="text" placeholder="Enter Keyword" id="key' + count + '" name="keyword"/ style="border-radius: 3px;">');
             count++;
         }
-        if(count > max){
-            $('#addKeyword').remove();
+        if (count > max) {
+            $('#addKeyword').attr('disabled','disabled');       // disables the add button
+        }
+    }
+
+    function removeKeyword() {
+        if (count > 3) {
+            count--;
+            $('#key' + count).remove();     // removes the bar not the text
+
+            $('#addKeyword').removeAttr('disabled');    // enables the add button
+
         }
     }
 

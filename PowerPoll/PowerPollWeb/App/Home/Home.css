@@ -35,6 +35,12 @@ h1{
     top: 90%;
 }
 
+#removeKeyword{
+    position: absolute;
+    width: 15%;
+    top: 80%;
+}
+
 input[type="button"]{
     position: absolute;
     color: #ffffff;

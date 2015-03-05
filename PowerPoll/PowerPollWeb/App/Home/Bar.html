@@ -52,6 +52,7 @@
 </head>
 <!--************************************************************************************************************************************-->
 <body>
+    <div id="hashtag"></div>
     <div class="chart"></div>
     <script>
         var margin = { top: 20, right: 20, bottom: 30, left: 40 },
@@ -79,6 +80,8 @@
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         var args = getQueryParams(document.location.search);
+
+        document.getElementById("hashtag").innerHTML = ('#'+args.hash);
 
         client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
             x.domain(data.map(function (d) { return d.id; }));

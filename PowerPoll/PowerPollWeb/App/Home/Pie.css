@@ -14,3 +14,13 @@ path.slice{
 	stroke-width:2px;
 	stroke: #fff;
 }
+
+#hashtag{
+    position:absolute;
+    top:95%;
+    left:50%;
+    font-family: 'Franklin Gothic';
+    font-weight: bold;
+    font-size:40px;
+    color:black
+}

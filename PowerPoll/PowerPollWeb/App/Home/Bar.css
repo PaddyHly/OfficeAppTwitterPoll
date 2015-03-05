@@ -25,3 +25,13 @@
 .x.axis path {
   display: none;
 }
+
+#hashtag{
+    position:absolute;
+    top:80%;
+    left:50%;
+    font-family: 'Franklin Gothic';
+    font-weight: bold;
+    font-size:40px;
+    color:black
+}
