@@ -35,3 +35,8 @@
     font-size:40px;
     color:black
 }
+#tweetAddress{
+    position:absolute;
+    top:85%;
+    left:50%;
+}

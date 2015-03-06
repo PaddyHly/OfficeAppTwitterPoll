@@ -22,17 +22,15 @@
             count++;
         }
         if (count > max) {
-            $('#addKeyword').attr('disabled','disabled');       // disables the add button
+            $('#addKeyword').attr('disabled','disabled');     
         }
     }
 
     function removeKeyword() {
         if (count > 3) {
             count--;
-            $('#key' + count).parent('p').remove();     // removes the bar not the text
-
-            $('#addKeyword').removeAttr('disabled');    // enables the add button
-
+            $('#key' + count).parent('p').remove();     
+            $('#addKeyword').removeAttr('disabled');   
         }
     }
 

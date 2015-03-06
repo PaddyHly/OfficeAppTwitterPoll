@@ -24,3 +24,9 @@ path.slice{
     font-size:40px;
     color:black
 }
+
+#tweetAddress{
+    position:absolute;
+    top:100%;
+    left:50%;
+}
