@@ -52,14 +52,14 @@
 </head>
 <!--************************************************************************************************************************************-->
 <body>
-    <div id="hashtag"></div>
     <div id="tweetAddress">
         <h1 style="font-family: 'Franklin Gothic'; font-weight: bold; font-size:40px;color:black;">@TwitPollPP</h1>
     </div>
+    <h2><div id="hashtag"></div></h2>
     <div class="chart"></div>
     <script>
         var args = getQueryParams(document.location.search);
-        document.getElementById("hashtag").innerHTML = ('#' + args.hash);
+        document.getElementById("hashtag").innerHTML = ('#' + args.hash)
 
         var svg = d3.select("body")
 			.append("svg")
@@ -90,7 +90,7 @@
 			.outerRadius(radius)
 			.innerRadius(radius);
 
-        svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        svg.attr("transform", "translate(" + (width / 2) + "," + ((width / 2) - 150) + ")");
 
         var key = function (d) { return d.data.id; };
 
@@ -147,7 +147,7 @@
 
         update(args.hash);
         function update(hash) {
-            client.getTable('Result').where({ pollId: args.hash }).read().done( function (data) {
+            client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
 
                 var noVotes = true;
                 for (var i = 0; i < data.length; i++) {

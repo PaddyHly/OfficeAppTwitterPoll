@@ -26,17 +26,14 @@
   display: none;
 }
 
-#hashtag{
-    position:absolute;
-    top:80%;
-    left:50%;
+
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
     font-family: 'Franklin Gothic';
     font-weight: bold;
     font-size:40px;
-    color:black
-}
-#tweetAddress{
-    position:absolute;
-    top:85%;
-    left:50%;
+    color: black;
 }

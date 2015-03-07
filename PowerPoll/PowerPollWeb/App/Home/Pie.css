@@ -15,18 +15,16 @@ path.slice{
 	stroke: #fff;
 }
 
-#hashtag{
-    position:absolute;
-    top:95%;
-    left:50%;
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
     font-family: 'Franklin Gothic';
     font-weight: bold;
     font-size:40px;
-    color:black
+    color: black;
 }
 
-#tweetAddress{
-    position:absolute;
-    top:100%;
-    left:50%;
-}
