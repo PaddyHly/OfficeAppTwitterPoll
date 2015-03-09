@@ -30,16 +30,12 @@ namespace powerpollService
                     {
                         if (hashtag.ToLowerInvariant().Equals(poll.Id.ToLowerInvariant()))
                         {
-                            var tweetWords = Regex.Split(t.Tweet.Text,"\\s|,|/.|'|\"");//get the individual words
-                            foreach (string word in tweetWords)
+                            foreach (Result result in poll.Results.ToArray())//go through the results of that poll
                             {
-                                foreach (Result result in poll.Results.ToArray())//go through the results of that poll
+                                if (t.Tweet.Text.ToLowerInvariant().Contains(result.Id.ToLowerInvariant()))
                                 {
-                                    if (result.Id.ToLowerInvariant().Equals(word.ToLowerInvariant()))
-                                    {
-                                        result.Count++;
-                                        context.SaveChangesAsync();
-                                    }
+                                    result.Count++;
+                                    context.SaveChangesAsync();
                                 }
                             }
                         }
@@ -48,6 +44,7 @@ namespace powerpollService
                 context.SaveChanges();
             };
             stream.StartStream();
+            monitor();
         }
     }
 }
