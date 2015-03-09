@@ -20,11 +20,17 @@ h1{
     text-align: center;
 }
 
-h2{
+h2,#timer{
     text-align: center;
     font-family: 'Franklin Gothic';
     font-weight: bold;
     font-size:40px;
     color: black;
+}
+
+#timer{
+    position: absolute;
+    top: 90%;
+    left: 80%;
 }
 

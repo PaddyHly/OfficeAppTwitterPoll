@@ -29,6 +29,12 @@ h1{
     top: 50%;
 }
 
+#timer{
+    position: absolute;
+    left: 50%;
+    top: 70%;
+}
+
 #addKeyword{
     position: absolute;
     width: 15%;

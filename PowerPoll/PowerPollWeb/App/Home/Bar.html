@@ -56,8 +56,35 @@
         <h1 style="font-family: 'Franklin Gothic'; font-weight: bold; font-size:40px;color:black;">@TwitPollPP</h1>
     </div>
     <h2><div id="hashtag"></div></h2>
+    <h3 id="timer"></h3> 
     <div class="chart"></div>
     <script>
+        var args = getQueryParams(document.location.search);
+        /*-----------set up  timer-------------------*/
+        var mins = args.duration;
+        var sec = 00;
+        setInterval(function () {
+            if (sec != 00) {
+                sec--;
+                sec = (sec < 10) ? "0" + sec : sec;
+
+            }
+
+            if (sec.length == 1) {
+                sec = "0" + sec;
+            }
+
+            if (sec == 00 && mins != 0) {
+                mins--;
+                sec = 59;
+
+            }
+
+            document.getElementById("timer").innerHTML = mins + " : " + sec;
+
+        }, 1000);
+
+        /*-------------set up blank bar chart-------------------*/
         var margin = { top: 20, right: 20, bottom: 30, left: 40 },
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
@@ -82,8 +109,6 @@
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        var args = getQueryParams(document.location.search);
-
         document.getElementById("hashtag").innerHTML = ('#'+args.hash);
 
         client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
@@ -107,10 +132,10 @@
                     .attr("y", function (d) { return y(d.count / 2); })
                     .text(function (d) { return d.id; });
         });
-        var end_time = new Date();
-        end_time.setMinutes(end_time.getMinutes() + args.duration);
-        update(args.hash);
 
+
+        update(args.hash);
+        /*------------------gets data for and animates the bar graph---------------------------*/
         function update(hash) {
 
             client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
