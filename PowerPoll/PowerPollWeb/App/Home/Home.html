@@ -34,17 +34,17 @@
     <h1>
         <img src="../../Images/head.png" style="width:100%; height:100%;">
     </h1>
-    <div id="key">Poll Hashtag: #<input type="text" placeholder="PollName" id="hashtag" style="border-radius: 3px;" /></div>
+    <div id="key">Poll Hashtag: #<input type="text" placeholder="PollName" id="hashtag" size="25" style="border-radius: 3px;" /></div>
     <br />
-    <div id="duration">Duration: <input type="number" min="1" max="30" id="length" placeholder="max 30mins" style="border-radius: 3px;" /> (mins)</div>
-    <input type="image" src="../../Images/barchartIcon.jpg" width="10%" height="15%" style="position:absolute; top:85%; left:75%;border-style:solid; border-color:#d24726; border-radius:5px;" onclick="createPoll('bar')">
-    <input type="image" src="../../Images/piechartIcon.jpg" width="10%" height="15%" style="position:absolute; top:85%; left:90%;border-style:solid; border-color:#d24726; border-radius:5px;" onclick="createPoll('pie')">
+    <div id="duration">Duration (mins): <input type="number" min="1" max="30" id="length" size="23" placeholder="max 30 mins" style="border-radius: 3px;" /></div>
+    <input type="image" src="../../Images/barchartIcon.jpg" width="7%" height="10%" style="position:absolute; top:45%; left:10% ;border-style:solid; border-color:#d24726; border-radius:5px;" onclick="createPoll('bar')">
+    <input type="image" src="../../Images/piechartIcon.jpg" width="7%" height="10%" style="position:absolute; top:45%; left:20% ;border-style:solid; border-color:#d24726; border-radius:5px;" onclick="createPoll('pie')">
     <div id="keywords">
-        <p>Keyword 1:  <input type="text" placeholder="Enter Keyword" id="key1" name="keyword" style="border-radius: 3px;" /></p>
-        <p>Keyword 2:  <input type="text" placeholder="Enter Keyword" id="key2" name="keyword" style="border-radius: 3px;" /></p>
+        <p style="margin:4px;">Option 1:  <input type="text" placeholder="Enter Option" id="key1" size="25" name="keyword" style="border-radius: 3px;" /></p>
+        <p style ="margin:4px;">Option 2:  <input type="text" placeholder="Enter Option" id="key2" size="25" name="keyword" style="border-radius: 3px;" /></p>
     </div>
-    <input type="button" id="addKeyword" value="+ Keyword" style="border-radius: 5px;" />
-    <input type="button" id="removeKeyword" value="- Keyword" style="border-radius: 5px;" />
+    <input type="button" id="addKeyword" value="+" style="border-radius: 5px;" />
+    <input type="button" id="removeKeyword" value="-" style="border-radius: 5px;" />
     <br>
     <script>
         function createPoll(graphType) {
