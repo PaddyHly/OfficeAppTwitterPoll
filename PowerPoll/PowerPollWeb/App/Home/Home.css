@@ -1,5 +1,15 @@
 ﻿/* Page-specific styling */
 
+.chartButton{
+    position:absolute;
+    top:45%;
+    border-style:solid;
+    border-color:#d24726;
+    border-radius:5px;
+    width: 7%;
+    height:10%;
+}
+
 h1{
     background-repeat: no-repeat;
     background-position: top;
