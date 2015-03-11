@@ -55,35 +55,35 @@
     <div id="tweetAddress">
         <h1 style="font-family: 'Franklin Gothic'; font-weight: bold; font-size:40px;color:black;">@TwitPollPP</h1>
     </div>
-    <h2><div id="hashtag"></div></h2>
+    <h2 id="hashtag"></h2>
     <h3 id="timer"></h3> 
     <div class="chart"></div>
     <script>
         var args = getQueryParams(document.location.search);
 
         /*-----------set up  timer-------------------*/
-        var mins = args.duration;
-        var sec = 00;
-        setInterval(function () {
-            if (sec != 00) {
-                sec--;
-                sec = (sec < 10) ? "0" + sec : sec;
+        client.getTable('Poll').where({ id: args.hash }).read().done(function (data) {
+            var diff = data[0].end_Time - Date.now();
+            var mins = Math.floor(diff / 1000 / 60);
+            diff -= mins * 1000 * 60;
+            var sec = Math.floor(diff / 1000);
+            setInterval(function () {
+                if (sec != 00) {
+                    sec--;
+                    sec = (sec < 10) ? "0" + sec : sec;
 
-            }
-
-            if (sec.length == 1) {
-                sec = "0" + sec;
-            }
-
-            if (sec == 00 && mins != 0) {
-                mins--;
-                sec = 59;
-
-            }
-
-            document.getElementById("timer").innerHTML = mins + " : " + sec;
-
-        }, 1000);
+                }
+                if (sec.length == 1) {
+                    sec = "0" + sec;
+                }
+                if (sec == 00 && mins != 0) {
+                    mins--;
+                    sec = 59;
+                }
+                document.getElementById("timer").innerHTML = mins + " : " + sec;
+            }, 1000);
+        });
+        /*---------------set up hashtag and option display-----------------*/
         client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
             var keywords = " followed by: ";
             for (var i = 0; i < data.length; i++) {
@@ -131,7 +131,7 @@
         var color = d3.scale.ordinal()
 			.range(["#d24726", "#217346", "#6a3889", "#a4373a", "#2b579a", "#64d4ef"]);
 
-        //draw the pie chart with one for each value (covers time till first vote)
+        //draw the pie chart with one for each value instead of displaying blank chart
         client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
             for (var i = 0; i < data.length; i++) {
                 data[i].count = 1;
