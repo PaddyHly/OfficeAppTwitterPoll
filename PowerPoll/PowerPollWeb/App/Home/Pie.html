@@ -124,7 +124,7 @@
 			.outerRadius(radius)
 			.innerRadius(radius);
 
-        svg.attr("transform", "translate(" + (width / 2) + "," + ((width / 2) - 150) + ")");
+        svg.attr("transform", "translate(" + (width / 2) + "," + ((width / 2) - 150) + ")");//************************************************
 
         var key = function (d) { return d.data.id; };
 
@@ -180,6 +180,7 @@
         });
 
         update(args.hash);
+
         function update(hash) {
             client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
 

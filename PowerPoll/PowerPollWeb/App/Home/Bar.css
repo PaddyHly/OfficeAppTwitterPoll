@@ -26,14 +26,12 @@
   display: none;
 }
 
-
-h1{
-    text-align: center;
+#tweetAddress{
+    font-weight: bold;
 }
-h2,#timer{
+#info{
     text-align: center;
     font-family: 'Franklin Gothic';
     font-weight: bold;
-    font-size:40px;
     color: black;
 }

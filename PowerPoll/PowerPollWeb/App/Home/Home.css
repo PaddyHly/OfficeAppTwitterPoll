@@ -21,18 +21,11 @@ h1{
     left: 25%;
 }
 
-#key{
+#left{
     position: absolute;
     left: 3%;
     top: 30%;
-    font-family:Verdana;
-    font-size:13px;
-}
-
-#duration{
-    position: absolute;
-    left: 3%;
-    top: 35%;
+    width:40%;
     font-family:Verdana;
     font-size:13px;
 }
@@ -41,6 +34,7 @@ h1{
     position: absolute;
     left: 50%;
     top: 29%;
+    width: 40%;
     font-family:Verdana;
     font-size:13px;
 }
@@ -51,24 +45,11 @@ h1{
     top: 70%;
 }
 
-#addKeyword{
-    position: absolute;
-    left: 77%;
-    top: 29%;
-}
-
-#removeKeyword{
-    position: absolute;
-    left: 81%;
-    top: 29%;
-}
-
 input[type="button"]{
     position: absolute;
     color: #ffffff;
 	background-color: #d24726;
-    height: 4%;
-    width: 3%;
+    
 }
 
 input[type="button"]:hover{
