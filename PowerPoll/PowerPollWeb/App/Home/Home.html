@@ -125,10 +125,10 @@
             client.getTable('Poll').read().done(function (results) {
             });
             if (graphType == "bar") {
-                window.setTimeout(function () { open("Bar.html?duration=" + duration + "&hash=" + hashtag, "_self") }, 1000);
+                window.setTimeout(function () { open("Bar.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self") }, 1000);
             }
             else if (graphType == "pie") {
-                window.setTimeout(function () { open("Pie.html?duration=" + duration + "&hash=" + hashtag, "_self") }, 1000);
+                window.setTimeout(function () { open("Pie.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self") }, 1000);
             }
 
         }
