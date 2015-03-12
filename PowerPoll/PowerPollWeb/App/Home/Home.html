@@ -47,18 +47,65 @@
     <input type="button" id="removeKeyword" value="-" style="border-radius: 5px;" />
     <br>
     <script>
-        function createPoll(graphType) {
-            var hashtag = $('#hashtag').val();
+               function createPoll(graphType) {
+
+            var validHashtag = true;
+            var hashtag = $('#hashtag').val().toLowerCase();
+
+            //Ensure that hashtag is AlphaNumeric
+            
+            if (hashtag.length == 0) {
+                validHashtag = false;
+            }
+            for (var i = 0; i < hashtag.length; i++)
+            {
+                    var hashChar = hashtag.charAt(i);
+
+                    if (/[^a-zA-Z0-9]/.test(hashChar))  
+                    {    
+                        validHashtag = false;
+                    }
+
+             }
+            
+            if (!validHashtag) {
+                return;
+            }
+
+            var validKeyWord = true;
             var duration = parseInt($('#length').val());
             var length = document.getElementsByName('keyword').length; //get number of keyword boxes added
             var keywords = new Array(length);
+           
+
             for (var i = 0; i < keywords.length; i++) {
-                keywords[i] = {
+                keywords[i] =
+                {
                     count: 0,
                     pollId: hashtag,
-                    id: $('#key' + (i+1)).val()
+                    id: $('#key' + (i + 1)).val()
                 };
+                var keyWord = $('#key' + (i + 1)).val();
+
+                  var keyChar = keyWord.charAt([i]);
+
+                  if (/[^a-zA-Z0-9]/.test(keyChar))
+                  {
+                       validKeyWord = false;
+                  }
+
+                  if (keyWord.length == 0)
+                  {
+                      validKeyWord = false;
+                  }
+
             }
+
+              if (!validKeyWord)
+             {
+                 return;
+             }
+
             var date = new Date();
             date.setMinutes(date.getMinutes() + duration);
             var dateString = dateToDateTime(date);
@@ -73,11 +120,12 @@
             client.getTable('Poll').read().done(function (results) {
             });
             if (graphType == "bar") {
-                window.setTimeout(function () { open("Bar.html?duration=" + duration + "&hash=" + hashtag, "_self")}, 1000);
+                window.setTimeout(function () { open("Bar.html?duration=" + duration + "&hash=" + hashtag, "_self") }, 1000);
             }
             else if (graphType == "pie") {
                 window.setTimeout(function () { open("Pie.html?duration=" + duration + "&hash=" + hashtag, "_self") }, 1000);
             }
+
         }
 
         //needs to be neatened up
