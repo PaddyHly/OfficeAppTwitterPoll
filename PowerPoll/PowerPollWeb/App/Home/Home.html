@@ -40,18 +40,15 @@
         Duration (mins): <input type="number" min="1" max="30" id="length" size="23" placeholder="max 30 mins" style="border-radius: 3px;" />
         <br />  
     </div>
-    <input type="image" src="../../Images/barchartIcon.jpg" style="left:10%" onclick="createPoll('bar')" class="chartButton">
-    <input type="image" src="../../Images/piechartIcon.jpg" style="left:20%" onclick="createPoll('pie')" class="chartButton">
-    
+    <input type="image" src="../../Images/barchartIcon.jpg" style="top:85%; left:35%;" onclick="createPoll('bar')" class="chartButton">
+    <input type="image" src="../../Images/piechartIcon.jpg" style="top:85%; left:50%;" onclick="createPoll('pie')"class="chartButton">
     <div id="keywords">
-        <p style="margin:4px;">
+        <p style="margin:2px;">
             Option 1:  <input type="text" placeholder="Enter Option" id="key1" size="25" name="keyword" style="border-radius: 3px;" />
-            <input type="button" id="removeKeyword" value="-" style="border-radius: 5px;" />
-        </p>
-        <p style ="margin:4px;">
-            Option 2:  <input type="text" placeholder="Enter Option" id="key2" size="25" name="keyword" style="border-radius: 3px;" />
+            <input type="button" id="removeKeyword" value="-" style="width:30px; margin-left:35px; border-radius: 5px;" />
             <input type="button" id="addKeyword" value="+" style="border-radius: 5px;" />
         </p>
+        <p style ="margin:2px;"> Option 2:  <input type="text" placeholder="Enter Option" id="key2" size="25" name="keyword" style="border-radius: 3px;" /></p>
     </div>
 
     <script>
