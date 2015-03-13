@@ -13,16 +13,10 @@ path.slice{
 	stroke: #fff;
 }
 
-
-h1{
-    text-align: center;
-}
-
-h2,h3{
+#info{
     text-align: center;
     font-family: 'Franklin Gothic';
-    font-weight: bold;
-    font-size:40px;
+    font-size:40%;
     color: black;
 }
 

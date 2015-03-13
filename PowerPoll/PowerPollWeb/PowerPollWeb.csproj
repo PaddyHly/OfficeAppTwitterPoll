@@ -131,6 +131,7 @@
     <Content Include="App\Home\Pie.html" />
     <Content Include="Images\barchartIcon.jpg" />
     <Content Include="Images\head.png" />
+    <Content Include="Images\icon.jpg" />
     <Content Include="Images\piechartIcon.jpg" />
     <Content Include="js\MobileServices.js" />
     <Content Include="js\MobileServices.min.js" />

@@ -31,9 +31,10 @@ namespace powerpollService
                         if (hashtag.ToLowerInvariant().Equals(poll.Id.ToLowerInvariant()) && poll.End_Time >= DateTime.Now)
                         {
                             String test = t.Tweet.Text.Replace("#" + poll.Id, "").ToLowerInvariant();
+                            test = test.Replace("@twitpollpp", "") + " ";
                             foreach (Result result in poll.Results.ToArray())//go through the results of that poll
                             {
-                                if (test.Contains(result.Id.ToLowerInvariant()))
+                                if (test.Contains(result.Id.ToLowerInvariant()+" "))
                                 {
                                     result.Count++;
                                     context.SaveChangesAsync();

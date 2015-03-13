@@ -3,10 +3,12 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ContentApp">
   <Id>695691ef-8f6e-4dc4-b6b9-c5a5f44499f7</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>[Provider name]</ProviderName>
+  <ProviderName>#PowerPoll</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="PowerPoll" />
   <Description DefaultValue="PowerPoll"/>
+  <IconUrl DefaultValue="http://powerpoll.azurewebsites.net/Images/icon.jpg"></IconUrl>
+  <SupportUrl DefaultValue="https://sites.google.com/a/tcd.ie/powerpoll/support"></SupportUrl>
   <Hosts>
     <Host Name="Presentation" />
   </Hosts>
