@@ -1,0 +1,37 @@
+﻿.bar {
+  fill: orangered;
+}
+
+.label {
+	font: 30px sans-serif;
+	fill:  black;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 15px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+#tweetAddress{
+    font-weight: bold;
+}
+#info{
+    text-align: center;
+    font-family: 'Franklin Gothic';
+    font-weight: bold;
+    color: black;
+}

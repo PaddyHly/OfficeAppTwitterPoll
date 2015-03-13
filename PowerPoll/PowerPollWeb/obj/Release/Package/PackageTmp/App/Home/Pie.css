@@ -1,0 +1,35 @@
+﻿body {
+	font: sans-serif;
+	position: relative;
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+}
+
+path.slice{
+	stroke-width:2px;
+	stroke: #fff;
+}
+
+
+h1{
+    text-align: center;
+}
+
+h2,h3{
+    text-align: center;
+    font-family: 'Franklin Gothic';
+    font-weight: bold;
+    font-size:40px;
+    color: black;
+}
+
+h3{
+    position: absolute;
+    text-align: center;
+    top: 160%;
+    left: 60%;
+}
+

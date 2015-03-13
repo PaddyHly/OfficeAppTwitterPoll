@@ -13,7 +13,7 @@
   <DefaultSettings>
     <SourceLocation DefaultValue="https://localhost:44302/App/Home/Home.html" />
     <RequestedWidth>600</RequestedWidth>
-    <RequestedHeight>540</RequestedHeight>
+    <RequestedHeight>525</RequestedHeight>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>

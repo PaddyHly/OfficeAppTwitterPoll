@@ -135,6 +135,7 @@
     <Content Include="js\MobileServices.js" />
     <Content Include="js\MobileServices.min.js" />
     <Content Include="js\MobileServices.pri" />
+    <None Include="Properties\PublishProfiles\PowerPoll.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

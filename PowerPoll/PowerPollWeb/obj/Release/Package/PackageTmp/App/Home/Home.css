@@ -1,0 +1,63 @@
+﻿/* Page-specific styling */
+
+.chartButton{
+    position:absolute;
+    border-style:solid;
+    border-color:#d24726;
+    border-radius:5px;
+    width:10%;
+    height:15%;
+}
+
+h1{
+    background-repeat: no-repeat;
+    background-position: top;
+    margin:0px;
+    min-width:500px;
+}
+
+body{
+    min-width:500px;
+    min-height:500px;
+}
+
+#input{
+    position: relative;
+    left: 25%;
+}
+
+#left{
+    position: absolute;
+    left: 3%;
+    top: 30%;
+    width:40%;
+    font-family:Verdana;
+    font-size:13px;
+}
+
+#keywords{
+    position: absolute;
+    left: 50%;
+    top: 29%;
+    width: 40%;
+    font-family:Verdana;
+    font-size:13px;
+}
+
+#timer{
+    position: absolute;
+    left: 50%;
+    top: 70%;
+}
+
+input[type="button"]{
+    position: absolute;
+    color: #ffffff;
+	background-color: #d24726;
+    
+}
+
+input[type="button"]:hover{
+    background-color: #00ff90;
+    color:black;
+}
