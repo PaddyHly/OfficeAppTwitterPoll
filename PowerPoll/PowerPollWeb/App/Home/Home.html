@@ -40,7 +40,7 @@
         <br />  
     </div>
     <input type="image" src="../../Images/barchartIcon.jpg" style="top:85%; left:35%;" onclick="createPoll('bar')" class="chartButton">
-    <input type="image" src="../../Images/piechartIcon.jpg" style="top:85%; left:50%;" onclick="createPoll('pie')"class="chartButton">
+    <input type="image" src="../../Images/piechartIcon.jpg" style="top:85%; left:50%;" onclick="createPoll('pie')" class="chartButton">
     <div id="keywords">
         <p style="margin:2px;">
             Option 1:  <input type="text" placeholder="Enter Option" id="key1" size="25" name="keyword" style="border-radius: 3px;" />
@@ -49,13 +49,11 @@
         </p>
         <p style ="margin:2px;"> Option 2:  <input type="text" placeholder="Enter Option" id="key2" size="25" name="keyword" style="border-radius: 3px;" /></p>
     </div>
-
     <script>
                function createPoll(graphType) {
 
             var validHashtag = true;
             var hashtag = $('#hashtag').val().toLowerCase();
-
             //Ensure that hashtag is AlphaNumeric
             
             if (hashtag.length == 0) {
@@ -70,12 +68,11 @@
                         validHashtag = false;
                     }
 
-             }
+                }
             
             if (!validHashtag) {
                 return;
             }
-
             var validKeyWord = true;
             var duration = parseInt($('#length').val());
             var length = document.getElementsByName('keyword').length; //get number of keyword boxes added
@@ -91,24 +88,24 @@
                 };
                 var keyWord = $('#key' + (i + 1)).val();
 
-                  var keyChar = keyWord.charAt([i]);
+                    var keyChar = keyWord.charAt([i]);
 
-                  if (/[^a-zA-Z0-9]/.test(keyChar))
-                  {
-                       validKeyWord = false;
-                  }
+                    if (/[^a-zA-Z0-9]/.test(keyChar))
+                    {
+                        validKeyWord = false;
+                    }
 
-                  if (keyWord.length == 0)
-                  {
-                      validKeyWord = false;
-                  }
+                    if (keyWord.length == 0)
+                    {
+                        validKeyWord = false;
+                    }
 
             }
 
-              if (!validKeyWord)
-             {
-                 return;
-             }
+                if (!validKeyWord)
+                {
+                    return;
+                }
 
             var date = new Date();
             date.setMinutes(date.getMinutes() + duration);
@@ -120,16 +117,12 @@
             }
             var table = client.getTable('Poll');
             table.insert(input);
-            //console.log(JSON.stringify(input));
-            client.getTable('Poll').read().done(function (results) {
-            });
             if (graphType == "bar") {
                 window.setTimeout(function () { open("Bar.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self") }, 1000);
             }
             else if (graphType == "pie") {
                 window.setTimeout(function () { open("Pie.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self") }, 1000);
             }
-
         }
 
         //needs to be neatened up

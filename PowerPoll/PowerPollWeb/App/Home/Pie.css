@@ -3,9 +3,9 @@
 	position: relative;
 }
 
-svg {
+svg{
 	width: 100%;
-	height: 100%;
+	height: 75vh;
 }
 
 path.slice{
@@ -19,11 +19,3 @@ path.slice{
     font-size:40%;
     color: black;
 }
-
-h3{
-    position: absolute;
-    text-align: center;
-    top: 160%;
-    left: 60%;
-}
-
