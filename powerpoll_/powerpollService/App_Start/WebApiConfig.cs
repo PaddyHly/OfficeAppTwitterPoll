@@ -19,8 +19,8 @@ namespace powerpollService
             ConfigOptions options = new ConfigOptions();
 
             TwitterCredentials.ApplicationCredentials = TwitterCredentials.CreateCredentials(
-                "3004124297-zzToru8oHmIGxJAOyWojqeRP2fxgzx25irOO4de",
-                "Sa8CerPNMZfOh3hiWQ30gu9pxADnfnOAAAUGN4dlENKhd",
+                "3004124297-RR9ZNwofkwnt7ATF3fefQllHtDGgNH3u442QUWo",
+                "0XymIsK4bTDvzmz2xw4snubmLlvHp9oHeZa8EapWEVL9S",
                 "dQPcIhiNdtHAchfx7ZbsjeDAW",
                 "V53RXnrRhpq6ReHa6qtRKi5J5IhLz5HzYCyXAJP031krCzreur");
 
