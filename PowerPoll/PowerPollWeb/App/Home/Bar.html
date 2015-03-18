@@ -99,6 +99,7 @@
 
         var yAxis = d3.svg.axis()
             .scale(y)
+            .tickFormat(d3.format("d"))
             .orient("left");
 
         var svg = d3.select("body").append("svg")

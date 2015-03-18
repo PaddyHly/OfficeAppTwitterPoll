@@ -28,7 +28,7 @@ namespace PowerpollTests
             };
 
             Poll poll = new Poll { Id = hashtag, End_Time = DateTime.Now, Results = results };
-            /*foreach (Poll p in context.Polls)
+            foreach (Poll p in context.Polls)
             {
                 Console.WriteLine(p.Id);
             }
