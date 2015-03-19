@@ -25,6 +25,11 @@ namespace Test
             string[] options = Console.ReadLine().Split(',');
             int amountPer = options.Length / TWEET_LIMIT;
             int amount = TWEET_LIMIT % options.Length;
+            int[] count = new int[options.Length];
+            for (int i = 0; i < options.Length; i++ )
+            {
+                i = 0;
+            }
             for (int i = 0; i < TWEET_LIMIT; i++)
             {
                 string text = "@TwitPollPP #" + pollName + " ";
@@ -33,7 +38,12 @@ namespace Test
                     text = text + " ";
                 }
                 text = text + options[i % options.Length];
-                var tweet = Tweet.PublishTweet(text);
+                var tweet = Tweet.CreateTweet(text);
+                tweet.Publish();
+                if (tweet.IsTweetPublished)
+                {
+                    count++;
+                }
             }
             Console.ReadKey();
         }

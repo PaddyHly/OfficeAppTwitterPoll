@@ -129,7 +129,7 @@
         var key = function (d) { return d.data.id; };
 
         var color = d3.scale.ordinal()
-			.range(["#d24726", "#217346", "#6a3889", "#a4373a", "#2b579a", "#64d4ef"]);
+			.range(["#d24726", "#339933", "#ffa500", "#cc0000", "#3366cc", "#64d4ef"]);
 
         //draw the pie chart with one for each value instead of displaying blank chart
         client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
