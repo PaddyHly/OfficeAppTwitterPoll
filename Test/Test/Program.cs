@@ -28,7 +28,7 @@ namespace Test
             int[] count = new int[options.Length];
             for (int i = 0; i < options.Length; i++ )
             {
-                i = 0;
+                count[i] = 0;
             }
             for (int i = 0; i < TWEET_LIMIT; i++)
             {
@@ -42,7 +42,7 @@ namespace Test
                 tweet.Publish();
                 if (tweet.IsTweetPublished)
                 {
-                    count++;
+                    count[i % options.Length] = count[i % options.Length] + 1;
                 }
             }
             Console.ReadKey();

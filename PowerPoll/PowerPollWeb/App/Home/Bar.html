@@ -85,7 +85,7 @@
         /*-------------set up blank bar chart-------------------*/
         var margin = { top: 20, right: 20, bottom: 30, left: 40 },
             width = args.width - margin.left - margin.right,
-            height = args.height * 0.6 - margin.top - margin.bottom;
+            height = args.height * 0.6;
 
         var x = d3.scale.ordinal()
             .rangeRoundBands([0, width], .1);
@@ -131,8 +131,8 @@
                     .data(data)
                 .enter().append("text")
                     .attr("class", "label")
-                    .attr("x", function (d) { return x(d.id); })
-                    .attr("y", function (d) { return y(d.count / 2); })
+                    .attr("x", function (d) { return x(d.id) + (x.rangeBand()/2); })
+                    .attr("transform", function (d) { return "rotate(-90 " + (x(d.id)+(x.rangeBand()/2) )+ "," + y(0) + ")"; })
                     .text(function (d) { return d.id; });
         });
 
@@ -165,8 +165,7 @@
                     .data(data)
                     .transition()
                     .attr("class", "label")
-                    .attr("x", function (d) { return x(d.id); })
-                    .attr("y", function (d) { return y(d.count / 2); })
+                    .attr("y", function (d) { return y(0); })
                     .text(function (d) { return d.id; });
 
             });
