@@ -36,7 +36,7 @@
     <div id="left">
         Poll Hashtag: #<input type="text" placeholder="PollName" id="hashtag" size="25" style="border-radius: 3px;" />
         <br />
-        Duration (mins): <input type="number" min="1" max="30" id="length" size="23" placeholder="max 30 mins" style="border-radius: 3px;" />
+        Duration (mins): <input type="number" min="1" max="30" maxlength="2" id="length" size="23" placeholder="max 30 mins" style="border-radius: 3px;" />
         <br />  
     </div>
     <input type="image" src="../../Images/barchartIcon.jpg" style="top:85%; left:35%;" onclick="createPoll('bar')" class="chartButton">
@@ -75,6 +75,8 @@
             }
             var validKeyWord = true;
             var duration = parseInt($('#length').val());
+            if (duration > 30) duration = 30;
+            else if (duration < 1) duration = 1;
             var length = document.getElementsByName('keyword').length; //get number of keyword boxes added
             var keywords = new Array(length);
            
