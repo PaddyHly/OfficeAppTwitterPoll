@@ -56,19 +56,12 @@
             var hashtag = $('#hashtag').val().toLowerCase();
             //Ensure that hashtag is AlphaNumeric
             
-            if (hashtag.length == 0) {
+            if (hashtag.length <= 0 || hashtag.length > 20) {
                 validHashtag = false;
             }
-            for (var i = 0; i < hashtag.length; i++)
-            {
-                    var hashChar = hashtag.charAt(i);
-
-                    if (/[^a-zA-Z0-9]/.test(hashChar))  
-                    {    
-                        validHashtag = false;
-                    }
-
-                }
+            if (/[^a-zA-Z0-9]/.test(hashtag)) {
+                validHashtag = false;
+            }
             
             if (!validHashtag) {
                 return;
@@ -86,22 +79,24 @@
                 {
                     count: 0,
                     pollId: hashtag,
-                    id: $('#key' + (i + 1)).val()
+                    id: $('#key' + (i + 1)).val().trim()
                 };
-                var keyWord = $('#key' + (i + 1)).val();
 
-                    var keyChar = keyWord.charAt([i]);
+                if (/[^a-zA-Z0-9 ]/.test(keywords[i].id))
+                {
+                    validKeyWord = false;
+                }
 
-                    if (/[^a-zA-Z0-9]/.test(keyChar))
-                    {
+                if (keywords[i].id.length <= 0 || keywords[i].id.length > 20)
+                {
+                    validKeyWord = false;
+                }
+
+                for (var j = i - 1; j >= 0; j--) {
+                    if (keywords[i].id == keywords[j].id) {
                         validKeyWord = false;
                     }
-
-                    if (keyWord.length == 0)
-                    {
-                        validKeyWord = false;
-                    }
-
+                }
             }
 
                 if (!validKeyWord)
