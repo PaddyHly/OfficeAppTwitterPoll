@@ -50,11 +50,21 @@
         <p style ="margin:2px;"> Option 2:  <input type="text" placeholder="Enter Option" id="key2" size="25" name="keyword" style="border-radius: 3px;" /></p>
     </div>
     <script>
-               function createPoll(graphType) {
+        function createPoll(graphType) {
 
             var validHashtag = true;
             var hashtag = $('#hashtag').val().toLowerCase();
             //Ensure that hashtag is AlphaNumeric
+            client.getTable('Poll').where({ id: hashtag }).read().done(function (data) {
+                if (data.length > 0) {
+                    if (graphType == "bar") {
+                        open("Bar.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self");
+                    }
+                    else if (graphType == "pie") {
+                        open("Pie.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self");
+                    }
+                }
+            });
             
             if (hashtag.length <= 0 || hashtag.length > 20) {
                 validHashtag = false;
