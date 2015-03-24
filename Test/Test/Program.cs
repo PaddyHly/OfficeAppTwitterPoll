@@ -9,7 +9,7 @@ namespace Test
 {
     class Program
     {
-        static int TWEET_LIMIT = 120;
+        static int TWEET_LIMIT = 10;
 
         static void Main(string[] args)
         {
@@ -44,6 +44,9 @@ namespace Test
                 {
                     count[i % options.Length] = count[i % options.Length] + 1;
                 }
+            }
+            foreach(int i in count){
+                Console.WriteLine(i);
             }
             Console.ReadKey();
         }
