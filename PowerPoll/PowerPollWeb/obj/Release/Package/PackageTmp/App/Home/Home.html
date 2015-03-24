@@ -34,7 +34,7 @@
         <img src="../../Images/head.png" style="width:100%; height:100%;">
     </h1>
     <div id="left">
-        Poll Hashtag: #<input type="text" placeholder="PollName" id="hashtag" size="25" style="border-radius: 3px;" />
+        Poll Hashtag: #<input type="text" maxlength="20" placeholder="PollName" id="hashtag" size="25" style="border-radius: 3px;" />
         <br />
         Duration (mins): <input type="number" min="1" max="30" maxlength="2" id="length" size="23" placeholder="max 30 mins" style="border-radius: 3px;" />
         <br />  
@@ -43,11 +43,11 @@
     <input type="image" src="../../Images/piechartIcon.jpg" style="top:85%; left:50%;" onclick="createPoll('pie')" class="chartButton">
     <div id="keywords">
         <p style="margin:2px;">
-            Option 1:  <input type="text" placeholder="Enter Option" id="key1" size="25" name="keyword" style="border-radius: 3px;" />
+            Option 1:  <input type="text" maxlength="20" placeholder="Enter Option" id="key1" size="25" name="keyword" style="border-radius: 3px;" />
             <input type="button" id="removeKeyword" value="-" style="width:30px; margin-left:35px; border-radius: 5px;" />
             <input type="button" id="addKeyword" value="+" style="border-radius: 5px;" />
         </p>
-        <p style ="margin:2px;"> Option 2:  <input type="text" placeholder="Enter Option" id="key2" size="25" name="keyword" style="border-radius: 3px;" /></p>
+        <p style ="margin:2px;"> Option 2:  <input type="text" maxlength="20" placeholder="Enter Option" id="key2" size="25" name="keyword" style="border-radius: 3px;" /></p>
     </div>
     <script>
         function createPoll(graphType) {

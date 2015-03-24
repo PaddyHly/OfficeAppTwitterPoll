@@ -115,7 +115,7 @@
         document.getElementById("hashtag").innerHTML = ('#' + args.hash);
 
         var color = d3.scale.ordinal()
-			.range(["#d24726", "#339933", "#ffa500", "#cc0000", "#3366cc", "#64d4ef"]);
+			.range(["#ff6600", "#339933", "#ffa500", "#cc0000", "#3366cc", "#64d4ef"]);
 
         client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
             x.domain(data.map(function (d) { return d.id; }));
