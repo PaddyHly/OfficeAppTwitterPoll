@@ -50,36 +50,41 @@
         <p style ="margin:2px;"> Option 2:  <input type="text" maxlength="20" placeholder="Enter Option" id="key2" size="25" name="keyword" style="border-radius: 3px;" /></p>
     </div>
     <script>
+        var hashtagUsed = false;
         function createPoll(graphType) {
 
-            var validHashtag = true;
             var hashtag = $('#hashtag').val().toLowerCase();
+            
+            if (hashtag.length <= 0 || hashtag.length > 20) {
+                app.showNotification("No Hashtag", "Your Poll must contain a hashtag.");
+                return;
+            }
+            if (/[^a-zA-Z0-9]/.test(hashtag)) {
+                app.showNotification("Invalid Hashtag", "Hashtags must be made up of letters and numbers only");
+                return;
+            }
+
             //Ensure that hashtag is AlphaNumeric
             client.getTable('Poll').where({ id: hashtag }).read().done(function (data) {
-                if (data.length > 0) {
+                if (data.length > 0 && hashtagUsed) {
                     if (graphType == "bar") {
                         open("Bar.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self");
                     }
                     else if (graphType == "pie") {
                         open("Pie.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self");
                     }
+                    return;
+                }
+                else if (data.length > 0) {
+                    app.showNotification("Hashtag in Use", "Hashtag is already in use, selecting it again will display the active polls results.");
+                    hashtagUsed = true;
                 }
             });
-            
-            if (hashtag.length <= 0 || hashtag.length > 20) {
-                validHashtag = false;
-            }
-            if (/[^a-zA-Z0-9]/.test(hashtag)) {
-                validHashtag = false;
-            }
-            
-            if (!validHashtag) {
-                return;
-            }
-            var validKeyWord = true;
+
             var duration = parseInt($('#length').val());
-            if (duration > 30) duration = 30;
-            else if (duration < 1) duration = 1;
+            if (duration < 1 || duration > 30) {
+                app.showNotification("Invalid Duration", "Duration is less than one or empty, please use a duration between 1-30 minutes");
+            }
             var length = document.getElementsByName('keyword').length; //get number of keyword boxes added
             var keywords = new Array(length);
            
@@ -94,25 +99,26 @@
 
                 if (/[^a-zA-Z0-9 ]/.test(keywords[i].id))
                 {
-                    validKeyWord = false;
+                    app.showNotification("Invalid Option", "Option " + i + " is invalid, options must be made up of letters, numbers and spaces only");
+                    return;
                 }
 
                 if (keywords[i].id.length <= 0 || keywords[i].id.length > 20)
                 {
-                    validKeyWord = false;
+                    if(i > 1)
+                        app.showNotification("Invalid Option", "Option " + (i+1) + " is empty please remove option if not required");
+                    else
+                        app.showNotification("Invalid Option", "Option " + (i+1) + " is empty, the first two  options must be used");
+                    return;
                 }
 
                 for (var j = i - 1; j >= 0; j--) {
                     if (keywords[i].id == keywords[j].id) {
-                        validKeyWord = false;
+                        app.showNotification("Invalid Option", "Option " + (i+1) + " is matches option " + (j+1) + "options must be unique");
+                        return;
                     }
                 }
             }
-
-                if (!validKeyWord)
-                {
-                    return;
-                }
 
             var date = new Date();
             date.setMinutes(date.getMinutes() + duration);

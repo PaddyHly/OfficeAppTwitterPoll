@@ -9,7 +9,6 @@ namespace Test
 {
     class Program
     {
-        static int TWEET_LIMIT = 10;
 
         static void Main(string[] args)
         {
@@ -23,26 +22,39 @@ namespace Test
             string pollName = Console.ReadLine();
             Console.Write("Options: ");
             string[] options = Console.ReadLine().Split(',');
-            int amountPer = options.Length / TWEET_LIMIT;
-            int amount = TWEET_LIMIT % options.Length;
+            Console.Write("Votes for each: ");
+            String[] voteNumS = Console.ReadLine().Split(',');
+            int[] voteNum = new int[voteNumS.Length];
+            for (int i = 0; i < voteNum.Length; i++)
+            {
+                voteNum[i] = Convert.ToInt32(voteNumS[i]);
+            }
             int[] count = new int[options.Length];
             for (int i = 0; i < options.Length; i++ )
             {
                 count[i] = 0;
             }
-            for (int i = 0; i < TWEET_LIMIT; i++)
+            while (voteNum.Sum() != 0)
             {
-                string text = "@TwitPollPP #" + pollName + " ";
-                for (int j = 0; j < i / options.Length; j++)
+                for (int i = 0; i < voteNum.Length; i++)
                 {
-                    text = text + " ";
-                }
-                text = text + options[i % options.Length];
-                var tweet = Tweet.CreateTweet(text);
-                tweet.Publish();
-                if (tweet.IsTweetPublished)
-                {
-                    count[i % options.Length] = count[i % options.Length] + 1;
+                    Console.WriteLine("here");
+                    if (voteNum[i] != 0)
+                    {
+                        string text = "@TwitPollPP #" + pollName + " ";
+                        for (int j = 0; j < voteNum[i]; j++)
+                        {
+                            text = text + " ";
+                        }
+                        text = text + options[i];
+                        var tweet = Tweet.CreateTweet(text);
+                        tweet.Publish();
+                        if (tweet.IsTweetPublished)
+                        {
+                            count[i] = count[i] + 1;
+                        }
+                        voteNum[i] = voteNum[i] - 1;
+                    }
                 }
             }
             foreach(int i in count){

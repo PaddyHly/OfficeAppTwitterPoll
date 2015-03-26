@@ -164,13 +164,13 @@
                 x.domain(data.map(function (d) { return d.id; }));
                 y.domain([0, d3.max(data, function (d) { return d.count; })]);
 
-                svg.transition("g")
+                svg.transition("g").duration(100)
                     .attr("class", "y axis")
                     .call(yAxis);
 
                 svg.selectAll(".bar")
                     .data(data)
-                    .transition().duration(50)
+                    .transition().duration(100)
                     .attr("class", "bar")
                     .attr("x", function (d) { return x(d.id); })
                     .attr("width", x.rangeBand())
@@ -179,14 +179,14 @@
 
                 svg.selectAll(".label")
                     .data(data)
-                    .transition().duration(50)
+                    .transition().duration(100)
                     .attr("class", "label")
                     .attr("y", function (d) { return y(d.count) + 30; })
                     .style("text-align", "center")
                     .text(function (d) { return d.count; });
 
             });
-            window.setTimeout(function () { update(hash); }, 50);
+            window.setTimeout(function () { update(hash); }, 100);
         }
 
     </script>
