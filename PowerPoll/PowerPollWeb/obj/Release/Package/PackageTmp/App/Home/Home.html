@@ -134,6 +134,7 @@
                 results: keywords,
                 id: hashtag
             }
+            var table = client.getTable('Poll');
             table.insert(input);
             if (graphType == "bar") {
                 window.setTimeout(function () { open("Bar.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self") }, 1000);
