@@ -51,9 +51,15 @@
     </div>
     <script>
         var hashtagUsed = false;
+        var lastHashtag = "";
         function createPoll(graphType) {
 
             var hashtag = $('#hashtag').val().toLowerCase();
+
+            if (hashtag != lastHashtag) {
+                hashtagUsed = false;
+                lastHashtag = hashtag;
+            }
             
             if (hashtag.length <= 0 || hashtag.length > 20) {
                 app.showNotification("No Hashtag", "Your Poll must contain a hashtag.");
@@ -80,7 +86,6 @@
                     hashtagUsed = true;
                 }
             });
-
             var duration = parseInt($('#length').val());
             if (duration < 1 || duration > 30) {
                 app.showNotification("Invalid Duration", "Duration is less than one or empty, please use a duration between 1-30 minutes");
@@ -128,7 +133,6 @@
                 results: keywords,
                 id: hashtag
             }
-            var table = client.getTable('Poll');
             table.insert(input);
             if (graphType == "bar") {
                 window.setTimeout(function () { open("Bar.html?height=" + innerHeight + "&width=" + innerWidth + "&hash=" + hashtag, "_self") }, 1000);

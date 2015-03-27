@@ -110,7 +110,7 @@
         svg.append("g")
 			.attr("class", "labels");
         svg.append("g")
-			.attr("class", "lines");
+            .attr("class", "total");
 
         var width = args.width,
 		    height = args.height*0.6,
@@ -187,13 +187,11 @@
         function update(hash) {
             client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
 
-                var noVotes = true;
+                var sumVotes = 0;
                 for (var i = 0; i < data.length; i++) {
-                    if (data[i].count != 0) {
-                        noVotes = false;
-                    }
+                    sumVotes = data[i].count;
                 }
-                if (!noVotes) {
+                if (sumVotes > 0) {
                     var slice = svg.select(".slices").selectAll("path.slice")
 						.data(pie(data), key);
 
