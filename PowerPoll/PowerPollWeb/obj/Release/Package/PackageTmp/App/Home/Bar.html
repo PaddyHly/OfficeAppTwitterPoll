@@ -66,6 +66,7 @@
             var mins = Math.floor(diff / 1000 / 60);
             diff -= mins * 1000 * 60;
             var sec = Math.floor(diff / 1000);
+            mins = mins % 60;//deal with daylight savings time
             if (mins < 0) {
                 mins = 0;
                 sec = 0;

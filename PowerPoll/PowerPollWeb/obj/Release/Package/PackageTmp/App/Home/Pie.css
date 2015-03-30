@@ -16,6 +16,11 @@ path.slice{
 #info{
     text-align: center;
     font-family: 'Franklin Gothic';
-    font-size:40%;
+    font-size:25px;
     color: black;
+}
+
+.labels{
+    font-family: 'Franklin Gothic';
+    font-size:20px;
 }
