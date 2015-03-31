@@ -13,10 +13,10 @@ path.slice{
 	stroke: #fff;
 }
 
-#info{
+#info, #hashtag{
     text-align: center;
     font-family: 'Franklin Gothic';
-    font-size:25px;
+    font-size:22px;
     color: black;
 }
 
