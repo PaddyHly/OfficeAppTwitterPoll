@@ -62,11 +62,11 @@
         var args = getQueryParams(document.location.search);
         /*-----------set up  timer-------------------*/
         client.getTable('Poll').where({ id: args.hash }).read().done(function (data) {
-            var diff = data[0].end_Time - Date.now();
+            var today = new Date();
+            var diff = data[0].end_Time - today;
             var mins = Math.floor(diff / 1000 / 60);
             diff -= mins * 1000 * 60;
             var sec = Math.floor(diff / 1000);
-            mins = mins % 60;//deal with daylight savings time
             if (mins < 0) {
                 mins = 0;
                 sec = 0;

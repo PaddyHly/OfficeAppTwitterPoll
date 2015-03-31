@@ -28,7 +28,7 @@ namespace powerpollService
                 {
                     foreach (String hashtag in hashtags)//if the tweet contains the poll Id as a hashtag
                     {
-                        if (hashtag.ToLowerInvariant().Equals(poll.Id.ToLowerInvariant()) && poll.End_Time >= DateTime.Now)
+                        if (hashtag.ToLowerInvariant().Equals(poll.Id.ToLowerInvariant()) && poll.End_Time >= DateTime.UtcNow)
                         {
                             String test = t.Tweet.Text.Replace("#" + poll.Id, "").ToLowerInvariant();//string of tweet to be tested against
                             test = test.Replace("@twitpollpp", "") + " ";

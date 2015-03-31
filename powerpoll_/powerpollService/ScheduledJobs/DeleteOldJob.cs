@@ -28,7 +28,7 @@ namespace powerpollService
         public async override Task ExecuteAsync()
         {
             foreach(Poll poll in context.Polls){
-                if (poll.End_Time <= DateTime.Now)
+                if (poll.End_Time <= DateTime.UtcNow)
                 {
                     context.Polls.Remove(poll);
                 }

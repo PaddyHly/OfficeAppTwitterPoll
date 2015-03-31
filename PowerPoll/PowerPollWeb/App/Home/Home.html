@@ -154,24 +154,24 @@
                 dateString += (date.getMonth()+1)+'-';
             }
             if(date.getDate() < 10){
-                dateString += '0' + date.getDate()+'T';
+                dateString += '0' + date.getUTCDate()+'T';
             }
             else{
-                dateString += date.getDate()+'T';
+                dateString += date.getUTCDate()+'T';
             }
             if(date.getHours() < 10){
-                dateString += '0' + date.getHours()+':';
+                dateString += '0' + date.getUTCHours()+':';
             }
             else{
-                dateString += date.getHours()+':';
+                dateString += date.getUTCHours()+':';
             }
             if(date.getMinutes() < 10){
-                dateString += '0' + date.getMinutes()+':';
+                dateString += '0' + date.getUTCMinutes()+':';
             }
             else{
-                dateString += date.getMinutes()+':';
+                dateString += date.getUTCMinutes()+':';
             }
-            if(date.getSeconds() < 10){
+            if (date.getSeconds() < 10) {
                 dateString += '0' + date.getSeconds()+'Z';
             }
             else{

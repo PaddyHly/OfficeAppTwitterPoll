@@ -65,11 +65,9 @@
         client.getTable('Poll').where({ id: args.hash }).read().done(function (data) {
             var today = new Date();
             var diff = data[0].end_Time - today;
-            console.log(diff);
             var mins = Math.floor(diff / 1000 / 60);
             diff -= mins * 1000 * 60;
             var sec = Math.floor(diff / 1000);
-            mins += today.getTimezoneOffset();
             if (mins < 0) {
                 mins = 0;
                 sec = 0;
@@ -185,7 +183,7 @@
 
         });
 
-        //update(args.hash);
+        update(args.hash);
 
         function update(hash) {
             client.getTable('Result').where({ pollId: args.hash }).read().done(function (data) {
