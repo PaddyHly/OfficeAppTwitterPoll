@@ -38,7 +38,6 @@ namespace Test
             {
                 for (int i = 0; i < voteNum.Length; i++)
                 {
-                    Console.WriteLine("here");
                     if (voteNum[i] != 0)
                     {
                         string text = "@TwitPollPP #" + pollName + " ";

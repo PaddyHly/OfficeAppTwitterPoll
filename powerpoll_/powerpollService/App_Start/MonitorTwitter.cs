@@ -31,12 +31,12 @@ namespace powerpollService
                         if (hashtag.ToLowerInvariant().Equals(poll.Id.ToLowerInvariant()) && poll.End_Time >= DateTime.UtcNow)
                         {
                             String test = t.Tweet.Text.Replace("#" + poll.Id, "").ToLowerInvariant();//string of tweet to be tested against
-                            test = test.Replace("@twitpollpp", "") + " ";
+                            test = test.Replace("@twitpollpp", "");
                             Regex rgx = new Regex("[^a-zA-Z0-9 ]");
-                            test = rgx.Replace(test, "");
+                            test = rgx.Replace(test, "").Trim() + ".";
                             foreach (Result result in poll.Results.ToArray())//go through the results of that poll
                             {
-                                if (test.Contains(" "+result.Id.ToLowerInvariant()+" "))
+                                if (test.Contains(result.Id.ToLowerInvariant()+"."))
                                 {
                                     result.Count++;
                                     context.SaveChangesAsync();
@@ -47,8 +47,10 @@ namespace powerpollService
                 }
                 context.SaveChanges();
             };
-            stream.StartStream();
-            monitor();
+            while (true)
+            {
+                stream.StartStream();
+            }
         }
     }
 }
